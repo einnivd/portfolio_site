@@ -1,0 +1,42 @@
+/* ════════════════════════════════════
+   06-room-d.css — Room D (카드뉴스) · 슬라이더, 홀로그램 외곽선 hover
+   ════════════════════════════════════ */
+.room-d{background:var(--paper);padding:5rem 0;}
+.room-d-hdr{padding:0 2.5rem 3rem;display:flex;align-items:flex-end;gap:2rem;}
+.rd-info{flex:1;}
+.rd-tag{font-size:.52rem;letter-spacing:.38em;text-transform:uppercase;color:var(--ink2);opacity:.4;margin-bottom:.35rem;}
+.rd-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.3rem);font-weight:300;color:var(--ink);}
+.rd-desc{font-size:.65rem;color:var(--ink2);margin-top:.3rem;}
+
+.cn-slider-wrap{overflow:hidden;padding:3rem 5rem 4rem;position:relative;}
+.cn-track{display:flex;gap:2rem;width:max-content;will-change:transform;}
+.cn-card{
+  cursor:pointer;flex:0 0 440px;
+  position:relative;
+}
+/* 카드 외곽선 — 평소엔 회색, hover시 홀로그램 그라데이션 + 떠오름 */
+.cn-img{
+  width:440px;height:440px;
+  position:relative;border-radius:4px;
+  padding:3px;
+  background:rgba(26,23,20,.08);
+  transform:translateY(0);
+  transition:background .4s ease,box-shadow .4s ease,transform .4s cubic-bezier(.4,0,.2,1);
+}
+.cn-card:hover .cn-img{
+  transform:translateY(-8px);
+  background:linear-gradient(135deg,#E8D5FF,#C8E8FF,#C8F5E8,#FFF5C8,#FFD5E8,#E8D5FF);
+  background-size:300% 300%;
+  animation:holoFlow 3s ease infinite;
+  box-shadow:0 28px 60px rgba(26,23,20,.4);
+}
+/* 실제 이미지는 내부에 별도 wrap */
+.cn-img-inner{
+  width:100%;height:100%;overflow:hidden;border-radius:2px;
+}
+.cn-img-inner img{transition:transform .6s ease;}
+.cn-card:hover .cn-img-inner img{transform:scale(1.04);}
+.cn-img img{width:100%;height:100%;display:block;object-fit:cover;}
+.cn-meta{padding:.7rem 0;}
+.cn-no{font-size:.5rem;letter-spacing:.25em;text-transform:uppercase;color:var(--ink2);opacity:.4;margin-bottom:.2rem;}
+.cn-title{font-family:'Cormorant Garamond',serif;font-size:.98rem;font-weight:400;color:var(--ink);}

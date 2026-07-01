@@ -1,0 +1,39 @@
+/* ════════════════════════════════════
+   04-room-b.css — Room B (클론 코딩) · 가로 정렬, 홀로그램 hover
+   ════════════════════════════════════ */
+.room-b{background:var(--bg2);padding:5rem 0;}
+.h-bl{display:none;} /* HTML에 남은 빈 div — 안전하게 숨김 처리 */
+.room-b-hdr{padding:0 2.5rem 3rem;display:flex;align-items:flex-end;gap:2rem;}
+.rb-info{flex:1;}
+.rb-tag{font-size:.52rem;letter-spacing:.38em;text-transform:uppercase;color:var(--ink2);opacity:.4;margin-bottom:.35rem;}
+.rb-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.3rem);font-weight:300;color:var(--ink);}
+.rb-desc{font-size:.65rem;color:var(--ink2);margin-top:.3rem;}
+.h-track{display:flex;gap:0;padding:0 2.5rem;}
+.h-card{flex:1;position:relative;cursor:pointer;padding-right:1.5rem;}
+.h-card:last-child{padding-right:0;}
+/* 홀로그램 외곽선 hover */
+.h-img{
+  position:relative;z-index:2;
+  border-radius:4px;
+  padding:3px;
+  background:rgba(26,23,20,.08);
+  transform:translateY(0);
+  transition:background .4s ease,box-shadow .4s ease,transform .4s cubic-bezier(.4,0,.2,1);
+}
+.h-img-inner{
+  width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:2px;
+}
+.h-card:hover .h-img{
+  transform:translateY(-8px);
+  background:linear-gradient(135deg,#E8D5FF,#C8E8FF,#C8F5E8,#FFF5C8,#FFD5E8,#E8D5FF);
+  background-size:300% 300%;
+  animation:holoFlow 3s ease infinite;
+  box-shadow:0 28px 60px rgba(26,23,20,.4);
+}
+.h-img .mf{width:100%;height:100%;display:block;transition:transform .6s ease;}
+.h-card:hover .h-img .mf{transform:scale(1.03);}
+.h-cap{position:relative;z-index:2;padding:.85rem 0;opacity:.6;transition:opacity .3s ease;}
+.h-card:hover .h-cap{opacity:1;}
+.hc-no{font-size:.5rem;letter-spacing:.25em;text-transform:uppercase;color:var(--ink2);opacity:.5;margin-bottom:.22rem;}
+.hc-title{font-family:'Cormorant Garamond',serif;font-size:.98rem;font-weight:400;color:var(--ink);}
+.hc-sub{font-size:.6rem;color:var(--ink2);margin-top:.12rem;letter-spacing:.04em;}

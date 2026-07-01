@@ -1,0 +1,287 @@
+/* ════════════════════════════════════
+   01-hero.css — 히어로 섹션 (아치문 + 홀로그램 + 줌인 + 벽/바닥 + 나뭇잎 그림자)
+   ════════════════════════════════════ */
+
+.hero-wrap{
+  position:relative;
+  height:300vh;
+  z-index:1; /* about-mag(z-index:2)보다 항상 아래 */
+}
+.hero-sticky{
+  position:sticky;
+  top:0;
+  height:100vh;
+  background:var(--bg); /* 줌아웃 시 확대된 zoom-wrap 바깥으로 보일 여백 색상 */
+  overflow:hidden;
+  /* JS가 opacity 직접 제어 */
+}
+/* 히어로 전체(벽+바닥+문+텍스트)를 함께 확대시키는 래퍼 */
+.hero-zoom-wrap{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  /* 벽 + 바닥 배경을 여기로 이동 — 줌과 함께 같이 커지도록 */
+  background:
+    linear-gradient(180deg,
+      var(--bg) 0%,
+      var(--bg) 82%,
+      #E4E0D8 82%,
+      #DAD5C9 100%);
+  transform-origin:center center; /* JS가 문 중심 좌표로 동적 재설정 — 초기값은 안전한 기본값 */
+  will-change:transform;
+}
+/* 벽-바닥 경계선 — 은은한 그림자 라인 */
+.hero-sticky::before{
+  content:'';
+  position:absolute;
+  left:0;right:0;
+  top:82%;
+  height:14px;
+  background:linear-gradient(180deg,rgba(26,23,20,.06) 0%,transparent 100%);
+  pointer-events:none;
+  z-index:1;
+}
+/* 바닥 위 은은한 반사광(문 빛이 바닥에 비치는 느낌) */
+.hero-sticky::after{
+  content:'';
+  position:absolute;
+  left:50%;top:82%;
+  width:480px;height:18%;
+  transform:translateX(-50%);
+  background:radial-gradient(ellipse 60% 80% at 50% 0%,rgba(255,250,240,.35) 0%,transparent 70%);
+  pointer-events:none;
+  z-index:1;
+}
+
+/* ── 나뭇잎 그림자 ── */
+@keyframes leafSway{
+  0%{transform:rotate(0deg) translateX(0) translateY(0);}
+  25%{transform:rotate(1.5deg) translateX(10px) translateY(-4px);}
+  50%{transform:rotate(-1deg) translateX(-7px) translateY(3px);}
+  75%{transform:rotate(1.8deg) translateX(8px) translateY(-2px);}
+  100%{transform:rotate(0deg) translateX(0) translateY(0);}
+}
+/* 바닥 그림자 전용 — 벽보다 회전 각도를 작게 (이동 폭은 동일 유지) */
+@keyframes leafSwayFloor{
+  0%{transform:rotate(0deg) translateX(0) translateY(0);}
+  25%{transform:rotate(0.5deg) translateX(10px) translateY(-4px);}
+  50%{transform:rotate(-0.35deg) translateX(-7px) translateY(3px);}
+  75%{transform:rotate(0.6deg) translateX(8px) translateY(-2px);}
+  100%{transform:rotate(0deg) translateX(0) translateY(0);}
+}
+/* 클리핑 전용 래퍼 — 영역 밖으로 흔들려 나가는 부분을 잘라냄 */
+.hero-shadow-clip{
+  position:absolute;
+  pointer-events:none;
+  overflow:hidden; /* 핵심: 여기서 영역 밖을 잘라냄 */
+}
+.hero-shadow-clip-wall{
+  top:0;left:0;
+  width:100%;height:82%; /* 벽 영역과 정확히 일치 */
+  z-index:1;
+}
+.hero-shadow-clip-floor{
+  bottom:0;left:0;
+  width:100%;height:18%; /* 바닥 띠와 정확히 일치 */
+  z-index:5; /* floor-cover(4) 위에서 바닥 그림자가 보이도록 */
+}
+/* 흔들리는 요소 자체 — 클리핑 영역보다 약간 크게 잡아서 흔들려도 빈틈이 안 보이게 */
+.hero-leaf-shadow-wall{
+  position:absolute;
+  top:-3%;left:-3%;
+  width:106%;height:106%;
+  animation:leafSway 14s ease-in-out infinite;
+  transform-origin:top left;
+  will-change:transform;
+}
+.hero-leaf-shadow-floor{
+  position:absolute;
+  bottom:-3%;left:-3%;
+  width:106%;height:106%;
+  animation:leafSwayFloor 14s ease-in-out infinite;
+  transform-origin:bottom left;
+  will-change:transform;
+}
+.hero-leaf-shadow-wall img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:top left;
+  display:block;
+  opacity:.5;
+  filter:grayscale(1) brightness(1.15) contrast(.9);
+  /* 마스크 제거 — 이미지가 벽 영역(82%)에 꽉 차서 바닥 경계까지 선명하게 닿음 */
+}
+.hero-leaf-shadow-floor img{
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:left top; /* 잎이 위쪽에 몰린 이미지 — 컨테이너 상단(벽-바닥 경계)에 닿도록 */
+  display:block;
+  opacity:.45;
+  filter:grayscale(1) brightness(1.1) contrast(.95);
+  /* 가로 마스크는 유지 — 오른쪽으로 갈수록 자연스럽게 사라짐 */
+}
+
+/* ── 좌/우 텍스트 ── */
+.hero-side-l{
+  position:absolute;left:2rem;top:50%;transform:translateY(-50%) rotate(180deg);
+  writing-mode:vertical-rl;text-orientation:mixed;
+  font-size:.55rem;letter-spacing:.35em;text-transform:uppercase;
+  color:rgba(26,23,20,.3);
+  display:flex;flex-direction:column;gap:2rem;
+  z-index:5;
+}
+.hero-side-r{
+  position:absolute;right:2.5rem;top:50%;transform:translateY(-50%);
+  text-align:right;z-index:5;
+}
+.hero-side-r p{font-size:.68rem;color:rgba(26,23,20,.4);line-height:1.8;letter-spacing:.05em;}
+
+/* 코너 */
+.hero-corner{position:absolute;z-index:5;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,23,20,.25);}
+.hero-corner.tl{top:1.8rem;left:2.5rem;}
+.hero-corner.tr{top:1.8rem;right:2.5rem;text-align:right;}
+
+/* ── 아치(문) ── */
+.arch-wrap{
+  position:absolute;
+  left:50%;
+  bottom:18%; /* 바닥 경계선과 정확히 일치 — 침범하지 않음 */
+  width:420px;
+  transform:translateX(-50%);
+  z-index:3;
+  /* scale은 부모 hero-zoom-wrap 전체에 걸림 — 여기선 위치 고정만 */
+}
+
+/* 바닥 덮개 레이어 — 문(z-index:3) 바로 위
+   바닥 영역만 다시 칠해서 문 하단이 바닥과 만나는 지점을 자연스럽게 가림 */
+.hero-floor-cover{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:18%;
+  background:linear-gradient(180deg,#E4E0D8 0%,#DAD5C9 100%);
+  z-index:4; /* 문(3) 바로 위 */
+  pointer-events:none;
+}
+
+/* 아치 프레임 — 독립 stacking context (자식 z-index가 여기 기준으로 쌓임) */
+.arch-frame{
+  position:relative;
+  width:100%;
+  padding-bottom:130%; /* 세로 아치 비율 */
+  z-index:0;
+}
+/* 아치 외부 흰 프레임 — 입체감(엠보싱) */
+.arch-outer{
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  background:linear-gradient(145deg,#FDFCFA 0%,#F8F6F2 55%,#EDE9E1 100%); /* 좌상단이 밝고 우하단이 살짝 어두운 광원 느낌 */
+  border-radius:50% 50% 0 0 / 30% 30% 0 0; /* 하단 radius 제거 — 바닥과 닿는 부분 깔끔하게 */
+  box-shadow:
+    0 16px 32px rgba(26,23,20,.16),      /* 문이 벽에서 살짝 떠 보이는 외부 그림자 */
+    0 4px 10px rgba(26,23,20,.10),       /* 바닥에 가까운 짧은 그림자 */
+    inset 0 3px 0 rgba(255,255,255,.95), /* 위쪽 테두리 하이라이트 — 빛이 위에서 들어오는 느낌 */
+    inset 0 -4px 8px rgba(26,23,20,.14), /* 아래쪽 안쪽 그림자 — 프레임 두께감 */
+    inset 4px 0 8px rgba(26,23,20,.07),  /* 좌측 안쪽 그림자 */
+    inset -4px 0 8px rgba(26,23,20,.07); /* 우측 안쪽 그림자 */
+  z-index:0;
+}
+
+/* 문 테두리 위로 걸치는 나뭇잎 그림자 — arch-outer 위, arch-inner 아래
+   벽 그림자와 같은 이미지를 문의 절대좌표에 맞춰 투영해서 이어져 보이게 함 */
+.arch-frame-shadow{
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  border-radius:50% 50% 0 0 / 30% 30% 0 0;
+  overflow:hidden;
+  z-index:1; /* arch-outer(0) 위, arch-inner(2) 아래 */
+  pointer-events:none;
+}
+.arch-frame-shadow img{
+  position:absolute;
+  /* 벽 그림자(.hero-leaf-shadow-wall img)와 완전히 같은 이미지를,
+     같은 화면 좌표에 겹치도록 위치를 계산해서 배치 (JS 없이 순수 CSS calc).
+     기준값: hero-zoom-wrap ≈ 100vw × 100vh
+             벽 그림자 박스 = left:-3%, top:-3%(of 82vh), width:106%, height:106%(of 82vh)
+             문(arch-wrap) = left:50vw-210px, top:82vh-546px, width:420px, height:546px
+     → 문 로컬 좌표 = 벽 그림자 좌표 - 문 좌표 */
+  left: calc(-53vw + 210px);
+  top: calc(-84.46vh + 546px);
+  width: 106vw;
+  height: 86.92vh;
+  object-fit:cover;
+  object-position:top left;
+  display:block;
+  opacity:.5;
+  filter:grayscale(1) brightness(1.15) contrast(.9);
+  animation:leafSway 14s ease-in-out infinite; /* 벽 그림자와 이름·주기·시작시점이 같아 자동으로 동기화됨 */
+  transform-origin:top left;
+}
+
+/* 홀로그램 내부 */
+.arch-inner{
+  position:absolute;
+  top:18px;left:18px;right:18px;bottom:0; /* 하단은 outer와 동일하게 꽉 채움 */
+  border-radius:50% 50% 0 0 / 28% 28% 0 0;
+  z-index:2;
+  background:linear-gradient(135deg,#E8D5FF,#C8E8FF,#C8F5E8,#FFF5C8,#FFD5E8,#E8D5FF);
+  background-size:300% 300%;
+  animation:holoFlow 6s ease infinite;
+  overflow:hidden;
+  /* 안쪽으로 들어간 느낌의 inner shadow — 외곽 흰 프레임이 더 도드라져 보이도록 */
+  box-shadow:
+    inset 0 4px 16px rgba(26,23,20,.18),
+    inset 4px 0 12px rgba(26,23,20,.08),
+    inset -4px 0 12px rgba(26,23,20,.08);
+}
+/* 홀로그램 빛 반사 */
+.arch-inner::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 30%,rgba(255,255,255,.45) 0%,transparent 60%);
+  pointer-events:none;
+}
+.arch-inner::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 70% 70%,rgba(200,240,255,.3) 0%,transparent 50%);
+  pointer-events:none;
+}
+
+/* 아치 안 텍스트 — JS로 opacity 페이드 */
+.arch-content{
+  position:absolute;inset:18px;
+  border-radius:50% 50% 2px 2px / 28% 28% 2px 2px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.8rem;z-index:2;
+  /* JS로 opacity 제어 */
+}
+.arch-star{
+  font-size:1.4rem;color:rgba(26,23,20,.5);
+  line-height:1;
+}
+.arch-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3rem,8vw,5.5rem);
+  font-weight:600;letter-spacing:.04em;
+  color:rgba(26,23,20,.85);
+  text-align:center;line-height:1;
+}
+.arch-role{
+  
+  font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;
+  color:rgba(26,23,20,.6);
+}
+.arch-divider{width:1px;height:32px;background:rgba(26,23,20,.25);}
+.arch-tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;font-style:italic;
+  color:rgba(26,23,20,.55);text-align:center;line-height:1.5;
+}
+.arch-enter{
+  display:flex;align-items:center;gap:.6rem;
+  font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;
+  color:rgba(26,23,20,.5);
+  position:relative;
+  top:1.2rem; /* 다른 텍스트는 그대로 두고 ENTER만 아래로 시각적 이동 */
+  border-bottom:1px solid rgba(26,23,20,.25);
+  padding-bottom:.3rem;
+  cursor:pointer;text-decoration:none;
+}

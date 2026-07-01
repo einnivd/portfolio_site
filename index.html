@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YEBIN — Portfolio Gallery</title>
+    <meta property="og:title" content="이예빈 — Portfolio Exhibition" />
+    <meta
+      property="og:description"
+      content="UI/UX 디자이너 이예빈의 포트폴리오 갤러리"
+    />
+    <meta
+      property="og:image"
+      content="https://portfolio-project-azure-two.vercel.app/images/hologram_hero.png"
+    />
+    <meta
+      property="og:url"
+      content="https://portfolio-project-azure-two.vercel.app"
+    />
+    <meta property="og:type" content="website" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/01_hero.css" />
+    <link rel="stylesheet" href="css/02.about.css" />
+    <link rel="stylesheet" href="css/03_roomA.css" />
+    <link rel="stylesheet" href="css/04_roomB.css" />
+    <link rel="stylesheet" href="css/05_roomC.css" />
+    <link rel="stylesheet" href="css/06_roomD.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <script src="js/main.js" defer></script>
+    <script src="js/01_hero.js" defer></script>
+    <script src="js/03_roomA.js" defer></script>
+    <script src="js/05_roomC.js" defer></script>
+    <script src="js/06_roomD.js" defer></script>
+  </head>
+  <body>
+    <nav id="nav">
+      <a href="#hero-wrap" class="nav-left" id="nav-logo"
+        >YEBIN PORTFOLIO GALLERY</a
+      >
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#room-a">Web Design &amp; Coding</a></li>
+        <li><a href="#room-b">Clone Coding</a></li>
+        <li><a href="#room-c">App Design</a></li>
+        <li><a href="#room-d">Card News</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- ══ HERO WRAP ══ -->
+    <div class="hero-wrap" id="hero-wrap">
+      <div class="hero-sticky" id="hero-sticky">
+        <!-- 히어로 전체(벽+바닥+문+텍스트+그림자)를 함께 확대시키는 래퍼 -->
+        <div class="hero-zoom-wrap" id="hero-zoom-wrap">
+          <!-- 벽 그림자 — 클리핑 래퍼(고정, overflow:hidden) + 흔들림 요소 분리 -->
+          <div class="hero-shadow-clip hero-shadow-clip-wall">
+            <div class="hero-leaf-shadow-wall">
+              <img src="images/tree_shadow_wall.png" alt="" />
+            </div>
+          </div>
+          <!-- 바닥 그림자 -->
+          <div class="hero-shadow-clip hero-shadow-clip-floor">
+            <div class="hero-leaf-shadow-floor">
+              <img src="images/tree_shadow_bottom.png" alt="" />
+            </div>
+          </div>
+
+          <div class="hero-corner tl">YEBIN PORTFOLIO GALLERY</div>
+
+          <div class="hero-corner tr">DIGITAL DESIGN COLLECTION · 2026</div>
+
+          <!-- 좌측 세로 텍스트 -->
+          <div class="hero-side-l">
+            <span>UI / UX Designer</span>
+            <div class="l-divider"></div>
+            <!-- <span>Scroll to Explore</span> -->
+          </div>
+
+          <!-- 우측 텍스트 -->
+          <div class="hero-side-r">
+            <p>A curated collection <br />of digital design.</p>
+          </div>
+
+          <!-- 바닥 덮개 — 문 하단이 바닥과 닿는 지점을 자연스럽게 가림 -->
+          <div class="hero-floor-cover"></div>
+
+          <!-- 아치 -->
+          <div class="arch-wrap" id="arch-wrap">
+            <div class="arch-frame">
+              <!-- 홀로그램 배경 -->
+              <div class="arch-outer"></div>
+              <!-- 문 테두리 위로 걸치는 나뭇잎 그림자 (흰 테두리 위, 홀로그램 아래) -->
+              <div class="arch-frame-shadow" id="arch-frame-shadow">
+                <img src="images/tree_shadow_wall.png" alt="" />
+              </div>
+              <div class="arch-inner"></div>
+              <!-- 아치 안 텍스트 — zoom 시 fade out -->
+              <div class="arch-content" id="arch-content">
+                <div class="arch-star">✦</div>
+                <div class="arch-name">YEBIN</div>
+                <div class="arch-role">UI / UX Designer</div>
+                <div class="arch-divider"></div>
+                <div class="arch-tagline">
+                  Welcome to<br />my curated gallery.
+                </div>
+                <a href="#about" class="arch-enter">ENTER→</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /hero-zoom-wrap -->
+      </div>
+    </div>
+
+    <!-- ══ CONTENT ══ -->
+    <div class="content-wrap">
+      <!-- ABOUT ME -->
+      <div class="about-spacer"></div>
+      <section id="about" class="about-mag">
+        <div class="mag-rail reveal">
+          <div class="mag-dot"></div>
+          <div class="mag-rail-line"></div>
+          <div class="mag-side-label">UI / UX Designer</div>
+        </div>
+        <div class="inner">
+          <div class="mag-main">
+            <div class="mag-grid">
+              <!-- 좌측: 01 About Me -->
+              <div class="mag-col mag-col-l reveal">
+                <h2 class="mag-title">ABOUT<br />ME</h2>
+                <p class="mag-intro">
+                  사용자의 경험을 설계하는<br />UI/UX 디자이너 이예빈입니다.
+                </p>
+                <p class="mag-intro">
+                  복잡한 문제를 단순하게 풀어내고,<br />
+                  디테일한 인터랙션으로<br />
+                  더 나은 경험을 만드는 것을 좋아합니다.
+                </p>
+              </div>
+
+              <!-- 중앙: 인물 사진 -->
+              <div class="mag-col mag-col-c reveal">
+                <div class="mag-photo-frame">
+                  <img src="images/profile_photo.png" alt="프로필 사진" />
+                </div>
+              </div>
+
+              <!-- 우측: Introduce + 정보 -->
+              <div class="mag-col mag-col-r reveal">
+                <div class="mag-eye">profile</div>
+                <div class="mag-eye-bar"></div>
+                <p class="mag-quote">
+                  Designing experiences,<br />shaping ideas.
+                </p>
+
+                <div class="mag-info">
+                  <div class="mag-info-row">
+                    <span class="mag-info-k">NAME</span
+                    ><span class="mag-info-v">이예빈 (Yebin Lee)</span>
+                  </div>
+                  <div class="mag-info-row">
+                    <span class="mag-info-k">MOBILE</span
+                    ><span class="mag-info-v">010-8405-1106</span>
+                  </div>
+                  <div class="mag-info-row">
+                    <span class="mag-info-k">EMAIL</span
+                    ><span class="mag-info-v">yelk0427@gmail.com</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 하단 3열: Experience / Skills / Education -->
+            <div class="mag-bottom reveal">
+              <div class="mag-bcol">
+                <div class="mag-eye">EDUCATION</div>
+                <div class="mag-eye-bar"></div>
+                <div class="mag-bdiv"></div>
+
+                <div class="mag-exp-item">
+                  <div class="mag-contents">
+                    (디지털디자인) AI도구 활용 사용자 중심 UI/UX디자인 및<br />프로토타이핑(Figma
+                    AI, ChatGPT)
+                    <p>그린컴퓨터아트학원</p>
+                  </div>
+
+                  <div class="mag-contents">경북대학교 임산공학전공 졸업</div>
+                </div>
+              </div>
+              <div class="mag-bcol">
+                <div class="mag-eye">SKILLS</div>
+                <div class="mag-eye-bar"></div>
+                <div class="mag-bdiv"></div>
+                <div class="skill-category">
+                  <div class="mag-skill-group">
+                    <div class="mag-info-k skills-label">Design</div>
+                    <div class="mag-chips">
+                      <span class="mag-chip">Figma</span>
+                      <span class="mag-chip">Photoshop</span>
+                      <span class="mag-chip">Illustrator</span>
+                    </div>
+                  </div>
+                  <div class="mag-skill-group">
+                    <div class="mag-info-k skills-label">Coding</div>
+                    <div class="mag-chips">
+                      <span class="mag-chip">HTML</span>
+                      <span class="mag-chip">CSS</span>
+                      <span class="mag-chip">JavaScript</span>
+                      <span class="mag-chip">jQuery</span>
+                      <span class="mag-chip">React</span>
+                    </div>
+                  </div>
+                  <div class="mag-skill-group">
+                    <div class="mag-info-k skills-label">AI</div>
+                    <div class="mag-chips">
+                      <span class="mag-chip">Claude</span>
+                      <span class="mag-chip">ChatGPT</span>
+                      <span class="mag-chip">Gemini</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mag-bcol">
+                <div class="mag-eye">EXPERIENCE</div>
+                <div class="mag-eye-bar"></div>
+                <div class="mag-bdiv"></div>
+                <div class="mag-exp-item">
+                  <div class="mag-contents">(주)에스씨케이컴퍼니</div>
+                  <div class="mag-contents">
+                    경북대학교 농업생명과학대학 조교
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mag-scroll-hint">SCROLL TO EXPLORE <span>↓</span></div>
+          </div>
+          <!-- /mag-main -->
+        </div>
+        <!-- /inner -->
+      </section>
+
+      <!-- ══ WORKS ══ -->
+      <div id="works">
+        <!-- ROOM A -->
+        <div class="room-a" id="room-a">
+          <div class="room-a-hdr reveal">
+            <div class="room-badge-acrylic">
+              <div class="rb-screw-bl"></div>
+              <div class="rb-screw-br"></div>
+              <span class="rb-sm">Room</span><span class="rb-letter">A</span>
+            </div>
+            <div class="ra-info">
+              <div class="ra-tag">Room A</div>
+              <div class="ra-name">웹 디자인 &amp; 코딩</div>
+              <div class="ra-desc">디자인부터 HTML/CSS/JS 구현까지</div>
+            </div>
+            <span
+              style="
+                font-size: 0.62rem;
+                letter-spacing: 0.15em;
+                color: var(--ink2);
+                opacity: 0.35;
+              "
+              >2 Works</span
+            >
+          </div>
+          <div class="v-stack">
+            <div class="v-item">
+              <div class="v-artwork-wrap">
+                <div class="v-img">
+                  <div
+                    class="mf"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        #1a0a4e,
+                        #5a28c0,
+                        #8a50e8
+                      );
+                      width: 100%;
+                      height: 100%;
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div class="v-cap">
+                <div class="v-cap-screw-tl"></div>
+                <div class="v-cap-screw-tr"></div>
+                <div class="v-cap-screw-bl"></div>
+                <div class="v-cap-screw-br"></div>
+                <div class="vc-no">A — 01</div>
+                <div class="vc-title">청년다잇다<br />(DAITDA)</div>
+                <div class="vc-type">Web Design &amp; Coding</div>
+                <div class="vc-divider"></div>
+                <div class="vc-tools">
+                  Figma / Photoshop / Illustrator<br />HTML · CSS · JavaScript
+                </div>
+                <div class="vc-btns">
+                  <a href="#" class="vc-btn">프로세스</a
+                  ><a href="#" class="vc-btn f">작업물</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="v-item">
+              <div class="v-artwork-wrap">
+                <div class="v-img">
+                  <div
+                    class="mf"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        #f0ebe0,
+                        #e0d0b8,
+                        #c8b890
+                      );
+                      width: 100%;
+                      height: 100%;
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div class="v-cap">
+                <div class="v-cap-screw-tl"></div>
+                <div class="v-cap-screw-tr"></div>
+                <div class="v-cap-screw-bl"></div>
+                <div class="v-cap-screw-br"></div>
+                <div class="vc-no">A — 02</div>
+                <div class="vc-title">헤어플러스</div>
+                <div class="vc-type">Web Redesign</div>
+                <div class="vc-divider"></div>
+                <div class="vc-tools">Figma<br />HTML · CSS · JavaScript</div>
+                <div class="vc-btns">
+                  <a href="#" class="vc-btn">프로세스</a
+                  ><a href="#" class="vc-btn f">작업물</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROOM B -->
+        <div class="room-b" id="room-b">
+          <div class="room-b-hdr reveal">
+            <div class="room-badge-acrylic">
+              <div class="rb-screw-bl"></div>
+              <div class="rb-screw-br"></div>
+              <span class="rb-sm">Room</span><span class="rb-letter">B</span>
+            </div>
+            <div class="rb-info">
+              <div class="rb-tag">Room B</div>
+              <div class="rb-name">클론 코딩</div>
+              <div class="rb-desc">실존 사이트 분석 &amp; 재현 퍼블리싱</div>
+            </div>
+            <span
+              style="
+                font-size: 0.62rem;
+                letter-spacing: 0.15em;
+                color: var(--ink2);
+                opacity: 0.35;
+              "
+              >3 Works</span
+            >
+          </div>
+          <div class="h-track">
+            <div class="h-card">
+              <div class="h-bl"></div>
+              <div class="h-img">
+                <div class="h-img-inner">
+                  <div
+                    class="mf"
+                    style="
+                      background: linear-gradient(135deg, #006241, #00a862);
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div class="h-cap">
+                <div class="hc-no">B — 01</div>
+                <div class="hc-title">스타벅스 코리아</div>
+                <div class="hc-sub">HTML / CSS / JS · jQuery · 2026</div>
+              </div>
+            </div>
+            <div class="h-card">
+              <div class="h-bl"></div>
+              <div class="h-img">
+                <div class="h-img-inner">
+                  <div
+                    class="mf"
+                    style="
+                      background: linear-gradient(135deg, #1a3a6e, #4a7adf);
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div class="h-cap">
+                <div class="hc-no">B — 02</div>
+                <div class="hc-title">도시락통</div>
+                <div class="hc-sub">HTML / CSS / JavaScript · 2026</div>
+              </div>
+            </div>
+            <div class="h-card">
+              <div class="h-bl"></div>
+              <div class="h-img">
+                <div class="h-img-inner">
+                  <div
+                    class="mf"
+                    style="
+                      background: linear-gradient(135deg, #1a1a2e, #0f3460);
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div class="h-cap">
+                <div class="hc-no">B — 03</div>
+                <div class="hc-title">SM엔터테인먼트</div>
+                <div class="hc-sub">HTML / CSS / JavaScript · 2025</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROOM C -->
+        <div class="room-c" id="room-c">
+          <div class="room-c-hdr reveal">
+            <div class="room-badge-acrylic">
+              <div class="rb-screw-bl"></div>
+              <div class="rb-screw-br"></div>
+              <span class="rb-sm">Room</span><span class="rb-letter">C</span>
+            </div>
+            <div class="rc-info">
+              <div class="rc-tag">Room C</div>
+              <div class="rc-name">앱 디자인</div>
+            </div>
+            <span
+              style="
+                font-size: 0.62rem;
+                letter-spacing: 0.15em;
+                color: var(--ink2);
+                opacity: 0.35;
+              "
+              >1 Work</span
+            >
+          </div>
+          <div class="app-showcase" id="app-showcase">
+            <div class="app-phone-group" id="app-phone-group">
+              <div class="app-phone-wrap">
+                <img
+                  src="images/phone-img.png"
+                  alt="ALL Ticket 앱 디자인"
+                  class="app-phone-img"
+                />
+              </div>
+              <div class="app-cap">
+                <div class="app-cap-screw-tl"></div>
+                <div class="app-cap-screw-tr"></div>
+                <div class="app-cap-screw-bl"></div>
+                <div class="app-cap-screw-br"></div>
+                <div class="ac-no">C — 01</div>
+                <div class="ac-title">앱 프로젝트 1</div>
+                <div class="ac-type">Mobile App UI/UX</div>
+                <div class="ac-divider"></div>
+                <div class="ac-tools">
+                  Figma / Protopie<br />Illustrator<br />2025 · 팀 프로젝트
+                </div>
+                <div class="ac-btns">
+                  <a href="#" class="ac-btn">프로세스</a
+                  ><a href="#" class="ac-btn f">작업물</a>
+                </div>
+              </div>
+            </div>
+            <!-- 우측 설명 박스 — 폰이 정면 되면 페이드인 -->
+            <div class="app-detail-box" id="app-detail-box">
+              <div class="adb-no">C — 01 · Detail</div>
+              <div class="adb-title">앱 프로젝트 1<br />상세 설명</div>
+              <div class="adb-divider"></div>
+              <p class="adb-desc">
+                사용자 리서치부터 와이어프레임, 고충실도 프로토타입까지 전
+                과정을 직접 설계했습니다.<br /><br />
+                직관적인 내비게이션과 일관된 인터랙션 패턴으로 사용성을
+                개선했습니다.
+              </p>
+              <div class="adb-meta">
+                <div class="adb-meta-item">
+                  <span>Role</span><strong>UI/UX Design</strong>
+                </div>
+                <div class="adb-meta-item">
+                  <span>Period</span><strong>2025.03 — 2025.06</strong>
+                </div>
+                <div class="adb-meta-item">
+                  <span>Team</span><strong>4인 팀 프로젝트</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROOM D -->
+        <div class="room-d" id="room-d">
+          <div class="room-d-hdr reveal">
+            <div class="room-badge-acrylic">
+              <div class="rb-screw-bl"></div>
+              <div class="rb-screw-br"></div>
+              <span class="rb-sm">Room</span><span class="rb-letter">D</span>
+            </div>
+            <div class="rd-info">
+              <div class="rd-tag">Room D</div>
+              <div class="rd-name">카드뉴스</div>
+              <div class="rd-desc">정보를 시각적으로 재구성한 콘텐츠</div>
+            </div>
+            <span
+              style="
+                font-size: 0.62rem;
+                letter-spacing: 0.15em;
+                color: var(--ink2);
+                opacity: 0.35;
+              "
+              >6 Works</span
+            >
+          </div>
+          <div class="cn-slider-wrap" id="cn-slider-wrap">
+            <div class="cn-track" id="cn-track">
+              <div class="cn-card" onclick="openModal(0)">
+                <div class="cn-img">
+                  <div class="cn-img-inner">
+                    <img
+                      src="images/cosmetic.png"
+                      alt="cosmetic"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cn-meta">
+                  <div class="cn-no">D — 01</div>
+                  <div class="cn-title">카드뉴스 01</div>
+                </div>
+              </div>
+              <div class="cn-card" onclick="openModal(1)">
+                <div class="cn-img">
+                  <div class="cn-img-inner">
+                    <img
+                      src="images/fitness.png"
+                      alt="fitness"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cn-meta">
+                  <div class="cn-no">D — 02</div>
+                  <div class="cn-title">카드뉴스 02</div>
+                </div>
+              </div>
+              <div class="cn-card" onclick="openModal(2)">
+                <div class="cn-img">
+                  <div class="cn-img-inner">
+                    <img
+                      src="images/glio.png"
+                      alt="glio"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cn-meta">
+                  <div class="cn-no">D — 03</div>
+                  <div class="cn-title">카드뉴스 03</div>
+                </div>
+              </div>
+              <div class="cn-card" onclick="openModal(3)">
+                <div class="cn-img">
+                  <div class="cn-img-inner">
+                    <img
+                      src="images/ownist.png"
+                      alt="ownist"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cn-meta">
+                  <div class="cn-no">D — 04</div>
+                  <div class="cn-title">카드뉴스 04</div>
+                </div>
+              </div>
+              <div class="cn-card" onclick="openModal(4)">
+                <div class="cn-img">
+                  <div class="cn-img-inner">
+                    <img
+                      src="images/sneakers.png"
+                      alt="sneakers"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cn-meta">
+                  <div class="cn-no">D — 05</div>
+                  <div class="cn-title">카드뉴스 05</div>
+                </div>
+              </div>
+              <!-- 복제본 -->
+              <div class="cn-card" onclick="openModal(0)">
+                <div class="cn-img">
+                  <div class="cn-img-inner">
+                    <img
+                      src="images/cosmetic.png"
+                      alt=""
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cn-meta">
+                  <div class="cn-no">D — 01</div>
+                  <div class="cn-title">카드뉴스 01</div>
+                </div>
+              </div>
+              <div class="cn-card" onclick="openModal(1)">
+                <div class="cn-img">
+                  <div class="cn-img-inner">
+                    <img
+                      src="images/fitness.png"
+                      alt=""
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cn-meta">
+                  <div class="cn-no">D — 02</div>
+                  <div class="cn-title">카드뉴스 02</div>
+                </div>
+              </div>
+              <div class="cn-card" onclick="openModal(2)">
+                <div class="cn-img">
+                  <div class="cn-img-inner">
+                    <img
+                      src="images/glio.png"
+                      alt=""
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cn-meta">
+                  <div class="cn-no">D — 03</div>
+                  <div class="cn-title">카드뉴스 03</div>
+                </div>
+              </div>
+              <div class="cn-card" onclick="openModal(3)">
+                <div class="cn-img">
+                  <div class="cn-img-inner">
+                    <img
+                      src="images/ownist.png"
+                      alt=""
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cn-meta">
+                  <div class="cn-no">D — 04</div>
+                  <div class="cn-title">카드뉴스 04</div>
+                </div>
+              </div>
+              <div class="cn-card" onclick="openModal(4)">
+                <div class="cn-img">
+                  <div class="cn-img-inner">
+                    <img
+                      src="images/sneakers.png"
+                      alt=""
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cn-meta">
+                  <div class="cn-no">D — 05</div>
+                  <div class="cn-title">카드뉴스 05</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 모달 -->
+          <div class="modal-overlay" id="cn-modal" onclick="closeModal(event)">
+            <div class="modal-box">
+              <button class="modal-close">✕</button>
+              <div class="modal-img-box">
+                <img
+                  id="modal-img-el"
+                  src=""
+                  alt=""
+                  style="
+                    width: 100%;
+                    aspect-ratio: 1/1;
+                    display: block;
+                    object-fit: cover;
+                  "
+                />
+              </div>
+              <div class="modal-body">
+                <div class="modal-no" id="modal-no"></div>
+                <div class="modal-title" id="modal-title"></div>
+                <div class="modal-type" id="modal-type">
+                  Card News · Visual Design
+                </div>
+                <div class="modal-divider"></div>
+                <div class="modal-desc" id="modal-desc">
+                  카드뉴스 작업물입니다. 정보를 시각적으로 재구성하여
+                  전달합니다.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /works -->
+
+      <!-- LAST -->
+      <section class="last" id="contact">
+        <div class="reveal">
+          <div class="last-no">No.999 — Exit · Gallery</div>
+          <h2 class="last-title">
+            함께<br /><em class="last-em">만들어요</em>
+          </h2>
+          <div class="last-div"></div>
+          <p class="last-desc">
+            새 프로젝트, 협업 제안, 안부 모두 환영합니다.<br />좋은 디자인은
+            좋은 대화에서 시작됩니다.
+          </p>
+        </div>
+        <div class="ext-links reveal">
+          <a href="#" class="ext-link"
+            ><div class="ext-l">
+              <div class="ext-icon ei-n">N</div>
+              <div>
+                <div class="ext-label">Portfolio</div>
+                <div class="ext-val">Notion 포트폴리오</div>
+              </div>
+            </div>
+            <span class="ext-arr">↗</span></a
+          >
+          <a href="#" class="ext-link"
+            ><div class="ext-l">
+              <div class="ext-icon ei-g">Git</div>
+              <div>
+                <div class="ext-label">Code</div>
+                <div class="ext-val">GitHub</div>
+              </div>
+            </div>
+            <span class="ext-arr">↗</span></a
+          >
+          <a href="#" class="ext-link"
+            ><div class="ext-l">
+              <div class="ext-icon ei-b">Bē</div>
+              <div>
+                <div class="ext-label">Design Works</div>
+                <div class="ext-val">Behance</div>
+              </div>
+            </div>
+            <span class="ext-arr">↗</span></a
+          >
+          <a href="mailto:yelk0427@gmail.com" class="ext-link"
+            ><div class="ext-l">
+              <div class="ext-icon ei-m">✉</div>
+              <div>
+                <div class="ext-label">Contact</div>
+                <div class="ext-val">이메일 보내기</div>
+              </div>
+            </div>
+            <span class="ext-arr">↗</span></a
+          >
+        </div>
+      </section>
+
+      <footer>
+        <span class="f-name">이예빈 — UI/UX Designer</span>
+        <span class="f-copy">© 2026 YEBIN · ALL RIGHTS RESERVED</span>
+      </footer>
+    </div>
+    <!-- /content-wrap -->
+  </body>
+</html>

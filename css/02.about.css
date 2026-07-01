@@ -1,0 +1,256 @@
+/* ════════════════════════════════════
+   02-about.css — About Me 섹션 (매거진 에디토리얼 레이아웃)
+   ════════════════════════════════════ */
+
+.about-spacer {
+  height: 60vh;
+} /* About이 온전히 보이는 짧은 정지 구간 */
+.about-mag {
+  background: var(--paper);
+  padding: 10rem 2.5rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  overflow: hidden; /* 내부 스크롤 캡처 방지 — window 스크롤이 그대로 전달되도록 */
+  z-index: 2; /* hero-sticky(투명해지는 중)보다 위, 이후 콘텐츠보다는 아래 */
+  opacity: 0; /* JS로 제어 — hero fade 진행과 함께 fade in */
+  pointer-events: none; /* 클릭/스크롤 모두 막아서 항상 window 스크롤만 동작 */
+  transition: none;
+}
+/* about-mag는 항상 pointer-events:none — 버튼 등 내부 클릭 요소만 개별로 auto 처리 */
+.about-mag.active .mag-info,
+.about-mag.active a {
+  pointer-events: auto;
+}
+/* unfixed: transform으로 위로 밀어내며 자연스럽게 사라짐 (reflow 점프 없음) */
+.about-mag.unfixed {
+  position: fixed; /* 계속 fixed 유지 — position 전환으로 인한 reflow 점프 방지 */
+}
+.inner {
+  display: flex;
+  gap: 3rem;
+  /* about-mag가 position:fixed라 부모 요소의 max-width/margin:auto가
+     전혀 적용되지 않으므로, fixed 요소 내부인 여기에 직접 폭 제한을 건다 */
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.mag-rail {
+  /* .inner(중앙 1440px 콘텐츠) 밖으로 빼서, position:fixed인 .about-mag
+     자신을 기준으로 절대 위치시킴 — 화면 양옆 여백(패딩) 안에 독립적으로
+     자리잡게 함. about-mag의 padding box가 기준이라 left:0이면 기존
+     2.5rem 여백 시작 지점과 같은 자리에 그대로 위치함 */
+  position: absolute;
+  left: 3%;
+  top: 20%;
+  transform: translateY(-50%);
+  flex-shrink: 0;
+  width: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 520px;
+}
+.mag-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #a88bd8;
+  margin-bottom: 1.2rem;
+  flex-shrink: 0;
+}
+.mag-rail-line {
+  flex: 1;
+  width: 1px;
+  background: var(--rule);
+}
+.mag-side-label {
+  writing-mode: vertical-rl;
+  font-size: 1.2rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink2);
+  opacity: 0.4;
+  margin-top: 1.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.mag-main {
+  flex: 1;
+}
+.mag-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  gap: 3.5rem;
+  margin-bottom: 2rem; /* 4rem → 2rem */
+}
+.mag-col-l {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 0.5rem;
+}
+.mag-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.6rem, 4.2vw, 3.6rem);
+  font-weight: 400;
+  line-height: 0.95;
+  color: var(--ink);
+  margin-bottom: 1.2rem; /* 1.8rem → 1.2rem */
+}
+.mag-intro {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink2);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.mag-col-c {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.mag-photo-frame {
+  position: relative;
+  width: 42%; /* 50% → 42%: aspect-ratio 1/1이라 폭을 줄이면 높이도 같이 줄어듦 */
+  aspect-ratio: 1/1;
+  background: linear-gradient(160deg, #eae6de, #e0dcd2);
+  border: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.mag-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.mag-col-r {
+  padding-top: 0.5rem;
+}
+.mag-eye {
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #a88bd8;
+  margin-bottom: 0.5rem;
+}
+.mag-eye-bar {
+  width: 48px;
+  height: 2px;
+  background: #a88bd8;
+  margin-bottom: 1rem;
+}
+.mag-quote {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.35;
+  margin-bottom: 1.5rem;
+}
+.mag-info {
+  display: flex;
+  flex-direction: column;
+}
+.mag-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.mag-info-k {
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink2);
+  opacity: 0.9;
+}
+.mag-info-v {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+}
+
+/* 하단 3열: Experience / Skills / Education */
+.mag-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+.mag-bdiv {
+  height: 1px;
+  background: var(--rule);
+  margin-bottom: 0.8rem; /* 1.2rem → 0.8rem */
+}
+.mag-exp-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.mag-exp-date {
+  font-size: 0.68rem;
+  color: var(--ink2);
+  opacity: 0.55;
+  margin-bottom: 0.2rem;
+}
+.mag-contents {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.mag-exp-item p {
+  font-size: 1rem;
+  color: var(--ink2);
+  opacity: 0.9;
+  padding: 3px 0;
+}
+.skill-category{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.mag-skill-group {
+  margin-bottom: 0.7rem; /* 1.2rem → 0.7rem */
+}
+.skills-label{
+  padding: 2px 0; /* 5px → 2px */
+}
+.mag-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.4rem 0;
+}
+.mag-chip {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.3rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 20px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.5);
+}
+.mag-scroll-hint {
+  margin-top: 1.2rem; /* 3rem → 1.2rem */
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink2);
+  opacity: 0.4;
+}
+.mag-scroll-hint span {
+  display: block;
+  margin-top: 0.3rem;
+}
