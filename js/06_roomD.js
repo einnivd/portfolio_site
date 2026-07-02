@@ -72,11 +72,17 @@
 
 // ── 모달 ──
 const modalData = [
-  { no: 'D — 01', title: '화장품 카드뉴스',           year: '2026', img: 'images/cosmetic.png' },
-  { no: 'D — 02', title: 'GYM UTO SUMMER',          year: '2026', img: 'images/fitness.png'  },
-  { no: 'D — 03', title: 'FILA GLIO',               year: '2025', img: 'images/glio.png'     },
-  { no: 'D — 04', title: 'OWNIST Triple Collagen',  year: '2025', img: 'images/ownist.png'   },
+  { no: 'D — 01', title: '화장품 카드뉴스',           year: '2026', img: 'images/cosmetic.jpg' },
+  { no: 'D — 02', title: 'GYM UTO SUMMER',          year: '2026', img: 'images/fitness.jpg'  },
+  { no: 'D — 03', title: 'FILA GLIO',               year: '2025', img: 'images/glio.jpg'     },
+  { no: 'D — 04', title: 'OWNIST Triple Collagen',  year: '2025', imgs: [
+      'images/ownist_top.jpg',
+      'images/ownist_gif.gif',
+      'images/ownist_bottom.jpg',
+    ] },
   { no: 'D — 05', title: 'Sneakers Unboxed',        year: '2025', img: 'images/sneakers.png' },
+  { no: 'D — 06', title: 'New Way of Hibiscus Ade', year: '2026', img: 'images/hibiscus_ade.jpg' },
+  { no: 'D — 07', title: 'Life Item',               year: '2026', img: 'images/life_item.jpg' },
 ];
 
 function openModal(idx) {
@@ -84,8 +90,25 @@ function openModal(idx) {
   document.getElementById('modal-no').textContent    = d.no;
   document.getElementById('modal-title').textContent = d.title;
   document.getElementById('modal-desc').textContent  = d.year + ' · Card News · Visual Design';
-  const imgEl = document.getElementById('modal-img-el');
-  if (imgEl) { imgEl.src = d.img; }
+
+  // 이미지 1장(img) 또는 여러 장을 세로로 이어붙인 것(imgs)을 둘 다 지원
+  const stack = document.getElementById('modal-img-stack');
+  if (stack) {
+    stack.innerHTML = '';
+    const sources = d.imgs && d.imgs.length ? d.imgs : [d.img];
+    sources.forEach((src) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = '';
+      stack.appendChild(img);
+    });
+  }
+
+  // 새 카드를 열 때마다 항상 접힌(미리보기) 상태로 초기화
+  const imgBox = document.getElementById('modal-img-box');
+  const expandBtn = document.getElementById('modal-img-expand');
+  if (imgBox) { imgBox.classList.remove('expanded'); imgBox.style.height = ''; }
+  if (expandBtn) { expandBtn.textContent = '상세페이지 더보기 ▼'; }
   document.getElementById('cn-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -112,3 +135,26 @@ document.getElementById('cn-modal')?.addEventListener('wheel', e => {
     e.preventDefault();
   }
 }, { passive: false });
+
+// ── 모달 이미지 상단만 미리보기 → 버튼 클릭 시 전체 펼치기 ──
+document.getElementById('modal-img-expand')?.addEventListener('click', () => {
+  const imgBox = document.getElementById('modal-img-box');
+  const stack  = document.getElementById('modal-img-stack');
+  const btn    = document.getElementById('modal-img-expand');
+  if (!imgBox || !stack || !btn) return;
+
+  const isExpanded = imgBox.classList.contains('expanded');
+
+  if (isExpanded) {
+    // 다시 접기 — 기본 미리보기 높이로 되돌림
+    imgBox.style.height = '380px';
+    imgBox.classList.remove('expanded');
+    btn.textContent = '상세페이지 더보기 ▼';
+  } else {
+    // 펼치기 — 이어붙인 이미지(들) 전체 높이만큼 확장
+    const fullHeight = stack.scrollHeight;
+    imgBox.style.height = fullHeight + 'px';
+    imgBox.classList.add('expanded');
+    btn.textContent = '접기 ▲';
+  }
+});

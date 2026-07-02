@@ -141,6 +141,8 @@ nav.scrolled {
   color: rgba(26, 23, 20, 0.5);
 }
 .nav-menu {
+  position: relative; /* z-index를 적용하려면 position 필요 — cursor-particles보다 위에 확실히 뜨게 */
+  z-index: 2;
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -157,12 +159,11 @@ nav.scrolled {
   pointer-events: auto;
 }
 .nav-menu a {
-  font-size: 0.9rem;
+  font-size: 0.62rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--ink2);
-  white-space: nowrap;
   padding: 0.3rem 0.7rem;
   border-radius: 20px;
   transition: all 0.2s;
@@ -227,15 +228,41 @@ nav.scrolled {
   transform: none;
 }
 .modal-img-box {
+  position: relative;
   width: 100%;
-  aspect-ratio: 1/1;
+  height: 380px; /* 기본 미리보기 높이 — 이미지 위쪽만 보임 */
   overflow: hidden;
+  transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-img-stack {
+  width: 100%;
 }
 .modal-img-box img {
-  width: 100%;
-  height: 100%;
+  width: 100%; /* 항상 모달 너비와 동일 */
+  height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: unset; /* 너비를 100%로 채우고, 높이는 비율대로 — 넘치는 아래쪽은 부모의 overflow:hidden이 가림 */
+}
+.modal-img-expand {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.5rem 1rem 1rem;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(180deg, transparent 0%, rgba(26, 23, 20, 0.75) 65%);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+.modal-img-box.expanded {
+  height: auto; /* JS가 실제 이미지 높이로 인라인 style을 덮어씀 */
+}
+.modal-img-box.expanded .modal-img-expand {
+  background: linear-gradient(180deg, transparent 0%, rgba(26, 23, 20, 0.55) 100%);
 }
 .modal-body {
   padding: 2rem 2.2rem 2.5rem;

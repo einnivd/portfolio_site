@@ -1,0 +1,26 @@
+/* ════════════════════════════════════
+   cursor-particles.css — 마우스를 따라다니는 홀로그램 입자 원들
+   ════════════════════════════════════ */
+#cursor-particles{
+  position:fixed;
+  inset:0;
+  pointer-events:none; /* 클릭/호버 등 페이지 인터랙션을 절대 막지 않음 */
+  z-index:300; /* nav(200)보다 위 — 페이지 전체에서 항상 보이게. modal(500)보다는 아래 */
+  overflow:hidden;
+  opacity:1;
+}
+.cursor-particle{
+  position:absolute;
+  top:0;
+  left:0;
+  border-radius:50%;
+  will-change:transform;
+  opacity:.8;
+  /* mix-blend-mode:screen 제거 — 밝은 배경 위에서 색이 하얗게 겹쳐 보이던 원인.
+     지정한 홀로그램 색상이 그대로 보이도록 일반 블렌드로 둠 */
+}
+
+/* 모바일/터치 기기에서는 마우스가 없으니 아예 표시 안 함 */
+@media (pointer: coarse){
+  #cursor-particles{ display:none; }
+}

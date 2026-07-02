@@ -97,12 +97,23 @@ document.getElementById('nav-logo')?.addEventListener('click', (e) => {
 // ── NAV 메뉴 hover — 홀로그램 색상 중 하나가 랜덤으로 나타남 ──
 // main.css :root에 정의된 --holo1~--holo5 중 하나를 마우스오버할 때마다 랜덤으로 골라
 // 배경색으로 적용한다(호버할 때마다 다른 색이 나오도록 매번 새로 뽑음).
+// 반투명하게 적용해서 뒤에서 움직이는 커서 입자(cursor-particles.js)가
+// 배경 뒤로 비쳐 보이도록 한다.
 const holoColors = ['--holo1', '--holo2', '--holo3', '--holo4', '--holo5'];
+
+function hexToRgba(hex, alpha) {
+  const clean = hex.replace('#', '');
+  const r = parseInt(clean.substring(0, 2), 16);
+  const g = parseInt(clean.substring(2, 4), 16);
+  const b = parseInt(clean.substring(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
 document.querySelectorAll('#nav-menu a').forEach(link => {
   link.addEventListener('mouseenter', () => {
     const pick = holoColors[Math.floor(Math.random() * holoColors.length)];
     const colorValue = getComputedStyle(document.documentElement).getPropertyValue(pick).trim();
-    link.style.background = colorValue;
+    link.style.background = hexToRgba(colorValue, 0.45); // 0.45 정도만 불투명 — 뒤의 입자가 비쳐 보이게
   });
   link.addEventListener('mouseleave', () => {
     link.style.background = '';
