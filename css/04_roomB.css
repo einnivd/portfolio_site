@@ -8,16 +8,16 @@
 .rb-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.3rem);font-weight:300;color:var(--ink);}
 .rb-desc{font-size:.65rem;color:var(--ink2);margin-top:.3rem;}
 
-/* 가로 트랙 — 카드 3개가 한 화면 안에 나란히 */
-.h-track{display:flex;gap:1.5rem;padding:0 2.5rem;}
-.h-card{flex:1 1 0;min-width:0;position:relative;cursor:pointer;}
+/* 그리드 — 작업물이 위/아래 2개씩(2x2)로 배열 */
+.h-track{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem 1.5rem;padding:0 2.5rem;}
+.h-card{position:relative;cursor:pointer;}
 
 /* 홀로그램 외곽선 hover — 이미지 감싸는 래퍼에 적용 */
 .h-artwork-wrap{
   position:relative;
   border-radius:4px;
   padding:10px;
-  background:rgba(26,23,20,.5);
+  background:rgba(26,23,20,.3);
   transform:translateY(0);
   transition:background .4s ease,box-shadow .4s ease,transform .4s cubic-bezier(.4,0,.2,1);
 }

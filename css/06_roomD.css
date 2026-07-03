@@ -19,7 +19,7 @@
   width:440px;height:440px;
   position:relative;border-radius:4px;
   padding:10px;
-  background:rgba(26,23,20,.08);
+  background:rgba(0, 0, 0, 0.2);
   transform:translateY(0);
   transition:background .4s ease,box-shadow .4s ease,transform .4s cubic-bezier(.4,0,.2,1);
 }

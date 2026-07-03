@@ -55,6 +55,10 @@
   gap: 2.5rem;
   background: var(--bg);
 }
+/* 두 번째 작업물만 좌우 반전 — 캡션이 왼쪽, 이미지가 오른쪽 */
+.v-item:nth-of-type(2) {
+  flex-direction: row-reverse;
+}
 
 /* 작품 래퍼 — hover시 떠오름 + 홀로그램 외곽선 */
 .v-artwork-wrap {

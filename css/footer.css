@@ -1,42 +1,195 @@
 /* ════════════════════════════════════
    07-footer.css — Last(Contact) 섹션 + Footer + 반응형
    ════════════════════════════════════ */
-.last{background:var(--ink);padding:8rem 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;position:relative;}
-.last-no{font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(232,228,222,.15);margin-bottom:1rem;}
-.last-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,4.5rem);font-weight:300;letter-spacing:.02em;color:rgba(232,228,222,.88);line-height:.95;margin-bottom:1.5rem;}
-.last-em{font-style:italic;color:rgba(232,228,222,.5);}
-.last-div{height:1px;background:rgba(232,228,222,.08);margin:1.8rem 0;}
-.last-desc{font-size:.8rem;line-height:2;color:rgba(232,228,222,.28);}
-.ext-links{display:flex;flex-direction:column;}
-.ext-link{display:flex;align-items:center;justify-content:space-between;padding:1.3rem 0;border-bottom:1px solid rgba(232,228,222,.06);text-decoration:none;color:rgba(232,228,222,.82);transition:padding-left .3s;}
-.ext-link:first-child{border-top:1px solid rgba(232,228,222,.06);}
-.ext-link:hover{padding-left:.5rem;}
-.ext-l{display:flex;align-items:center;gap:1.1rem;}
-.ext-icon{width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700;flex-shrink:0;border:1px solid rgba(232,228,222,.1);}
-.ei-n{background:rgba(232,228,222,.88);color:#1a1714;}
-.ei-g{background:#24292e;color:rgba(232,228,222,.8);font-size:.56rem;}
-.ei-b{background:#1769ff;color:#fff;border-color:#1769ff;}
-.ei-m{background:transparent;color:rgba(232,228,222,.38);}
-.ext-label{font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(232,228,222,.18);}
-.ext-val{font-family:'Cormorant Garamond',serif;font-size:.98rem;font-weight:400;margin-top:.1rem;}
-.ext-arr{font-size:.9rem;color:rgba(232,228,222,.18);transition:color .3s;}
-.ext-link:hover .ext-arr{color:rgba(232,228,222,.6);}
-footer{background:#111009;border-top:1px solid rgba(232,228,222,.04);padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:space-between;}
-.f-name{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,228,222,.15);}
-.f-copy{font-size:.56rem;letter-spacing:.1em;color:rgba(232,228,222,.1);}
+.last {
+  background: var(--ink);
+  padding: 8rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  position: relative;
+}
+.last-no {
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 222, 0.15);
+  margin-bottom: 1rem;
+}
+.last-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  color: rgba(232, 228, 222, 0.88);
+  line-height: 0.95;
+  margin-bottom: 1.5rem;
+}
+.last-em {
+  font-style: italic;
+  color: rgba(232, 228, 222, 0.5);
+}
+.last-div {
+  height: 1px;
+  background: rgba(232, 228, 222, 0.08);
+  margin: 1.8rem 0;
+}
+.last-desc {
+  font-size: 0.8rem;
+  line-height: 2;
+  color: rgba(232, 228, 222, 0.28);
+}
+.ext-links {
+  display: flex;
+  flex-direction: column;
+}
+.ext-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.3rem 0;
+  border-bottom: 1px solid rgba(232, 228, 222, 0.06);
+  text-decoration: none;
+  color: rgba(232, 228, 222, 0.82);
+  transition: padding-left 0.3s;
+}
+.ext-link:first-child {
+  border-top: 1px solid rgba(232, 228, 222, 0.06);
+}
+.ext-link:hover {
+  padding-left: 0.5rem;
+}
+.ext-l {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+.ext-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  border: 1px solid rgba(232, 228, 222, 0.1);
+}
+.ei-n {
+  background: rgba(232, 228, 222, 0.88);
+  color: #1a1714;
+}
+.ei-g {
+  background: #24292e;
+  color: rgba(232, 228, 222, 0.8);
+  font-size: 0.56rem;
+}
+.ei-b {
+  background: #1769ff;
+  color: #fff;
+  border-color: #1769ff;
+}
+.ei-m {
+  background: transparent;
+  color: rgba(232, 228, 222, 0.38);
+}
+.ext-label {
+  font-size: 0.5rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 222, 0.18);
+}
+.ext-val {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 0.98rem;
+  font-weight: 400;
+  margin-top: 0.1rem;
+}
+.ext-arr {
+  font-size: 0.9rem;
+  color: rgba(232, 228, 222, 0.18);
+  transition: color 0.3s;
+}
+.ext-link:hover .ext-arr {
+  color: rgba(232, 228, 222, 0.6);
+}
+footer {
+  background: #111009;
+  border-top: 1px solid rgba(232, 228, 222, 0.04);
+  padding: 1.8rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.f-name {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(232, 228, 222, 0.5);
+}
+.f-copy {
+  font-size: 0.56rem;
+  letter-spacing: 0.1em;
+  color: rgba(232, 228, 222, 0.5);
+}
 
 /* ── 반응형 — 모든 섹션 공통, 가장 마지막에 로드되어야 함 ── */
-@media(max-width:900px){
-  nav{padding:1rem 1.5rem;}
-  .arch-wrap{width:85vw;}
-  .about-header{padding:4rem 1.5rem 2.5rem;flex-wrap:wrap;}.ah-big{display:none;}
-  .room-a-hdr,.room-b-hdr,.room-c-hdr,.room-d-hdr{padding-left:1.5rem;padding-right:1.5rem;}
-  .v-item,.app-showcase{padding:4vh 1.5rem;flex-direction:column;align-items:flex-start;}
-  .v-cap,.app-cap{flex:none!important;width:100%;opacity:1!important;transform:none!important;}
-  .h-track{padding:0 1.5rem;overflow-x:auto;}
-  .h-card{flex:0 0 80%;}
-  .cn-slider-wrap{padding:0 1.5rem;}
-  .cn-card{flex:0 0 80%;}
-  .last{grid-template-columns:1fr;gap:3rem;padding:5rem 1.5rem;}
-  footer{padding:1.5rem;flex-direction:column;gap:.5rem;text-align:center;}
+@media (max-width: 900px) {
+  nav {
+    padding: 1rem 1.5rem;
+  }
+  .arch-wrap {
+    width: 85vw;
+  }
+  .about-header {
+    padding: 4rem 1.5rem 2.5rem;
+    flex-wrap: wrap;
+  }
+  .ah-big {
+    display: none;
+  }
+  .room-a-hdr,
+  .room-b-hdr,
+  .room-c-hdr,
+  .room-d-hdr {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .v-item,
+  .app-showcase {
+    padding: 4vh 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .v-cap,
+  .app-cap {
+    flex: none !important;
+    width: 100%;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .h-track {
+    padding: 0 1.5rem;
+    overflow-x: auto;
+  }
+  .h-card {
+    flex: 0 0 80%;
+  }
+  .cn-slider-wrap {
+    padding: 0 1.5rem;
+  }
+  .cn-card {
+    flex: 0 0 80%;
+  }
+  .last {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 5rem 1.5rem;
+  }
+  footer {
+    padding: 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
 }
