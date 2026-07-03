@@ -51,7 +51,7 @@
   align-items: flex-end;
   justify-content: center;
   /* padding: 6vh 2.5rem 8vh; */
-  margin: 20vh 0;
+  margin: 15vh 0;
   gap: 2.5rem;
   background: var(--bg);
 }
@@ -71,8 +71,7 @@
     transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.6s ease;
   transform: translateY(0);
-  /* 평소엔 그림자 없음 — 실제 이미지가 들어가면서 이 그림자가 박스 바깥
-     테두리처럼 도드라져 보였음. hover 시에만 뜨는 효과로 남김 */
+  /* 평소엔 그림자 없음. hover 시에만 뜨는 효과로 남김 */
 }
 /* 홀로그램 외곽선 — 평소엔 hidden */
 .v-artwork-wrap::before {
@@ -105,8 +104,7 @@
     0 12px 32px rgba(26, 23, 20, 0.28);
 }
 .v-img {
-  height: 80vh; /* 작품이 화면 높이의 80% */
-  width: auto;
+  width: 60wh;
   aspect-ratio: 16/9; /* 비율 유지 — 높이가 정해지면 너비는 자동 계산됨 */
   overflow: hidden;
   position: relative;
@@ -129,7 +127,7 @@
   z-index: 3;
   /* 작품 크기(80vh 기준)와 같은 비율(270:960)로 스케일 — 두 요소 사이의
      비율이 화면 크기와 무관하게 항상 유지되도록 vh 단위 사용 */
-  flex: 0 0 40vh;
+  flex: 0 40vh 40vh;
   /* 유리 패널 */
   padding: 1.9rem 2rem;
   border-radius: 20px;
