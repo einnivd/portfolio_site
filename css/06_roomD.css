@@ -10,22 +10,15 @@
   border-bottom: 1px solid var(--rule);
   display: flex;
   align-items: flex-end;
-  gap: 2rem;
+   gap: 3rem;
 }
 .rd-info {
   flex: 1;
 }
-.rd-tag {
-  font-size: 0.52rem;
-  letter-spacing: 0.38em;
-  text-transform: uppercase;
-  color: var(--ink2);
-  opacity: 0.4;
-  margin-bottom: 0.35rem;
-}
+
 .rd-name {
-  font-size: clamp(1.6rem, 2.5vw, 2.3rem);
-  font-weight: 500;
+    font-size: clamp(2.4rem, 7vw, 7rem);
+  font-weight: 700;
   color: var(--ink);
 }
 

@@ -170,13 +170,6 @@ nav.scrolled {
 .nav-menu a:hover {
   color: var(--ink);
 }
-/* room제목 */
-.ra-tag,
-.rb-tag,
-.rc-tag,
-.rd-tag{
-  
-}
 /* ── 공통 유틸리티 ── */
 .content-wrap {
   position: relative;
@@ -342,8 +335,8 @@ nav.scrolled {
 /* ── 공통 Room 배지(아크릴 액자) — Room A~D 헤더에서 공통 사용 ── */
 .room-badge-acrylic {
   flex-shrink: 0;
-  width: 68px;
-  height: 68px;
+  width: 150px;
+  height: 150px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(18px);
@@ -361,10 +354,11 @@ nav.scrolled {
     inset 0 -2px 3px rgba(0, 0, 0, 0.04);
   overflow: hidden;
 }
+.rb-screw-tl,
+.rb-screw-tr,
 .rb-screw-bl,
 .rb-screw-br {
   position: absolute;
-  bottom: 5px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -372,9 +366,91 @@ nav.scrolled {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.22);
   z-index: 1;
 }
+.rb-screw-tl {
+  top: 5px;
+  left: 5px;
+}
+.rb-screw-tr {
+  top: 5px;
+  right: 5px;
+}
 .rb-screw-bl {
+  bottom: 5px;
   left: 5px;
 }
 .rb-screw-br {
+  bottom: 5px;
   right: 5px;
+}
+.rb-sm{
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #a88db8;
+}
+.rb-letter{
+  font-size: 5rem;
+  font-weight: 600;
+  color: #826e8d;
+  line-height: 4rem;
+}
+/* 각 섹션 제목 */
+
+/* ════════════════════════════════════
+   room-headers.css — 전 룸 헤더 공통: 홀로그램 그라데이션 텍스트 + 배경 고스트 레터
+   ════════════════════════════════════ */
+
+/* 1) 홀로그램 그라데이션 텍스트
+   — 제목(*-name) 요소에 class="holo-title" 추가해서 사용 */
+.holo-title {
+  background: linear-gradient(
+    135deg,
+    #b088e8,
+    #4fa8d8,
+    #3fc9a8,
+    #d8b23c,
+    #e068a8,
+    #b088e8
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.5px rgba(26, 23, 20, 0.25);
+  animation: holoFlow 4s ease infinite;
+  display: inline-block;
+  font-weight: 700;
+}
+
+/* room A C E 제목과 캡션 순서와 위치 변경 */
+
+
+/* ════════════════════════════════════
+   room-hdr-zigzag.css — 헤더 지그재그 배치
+   ── 기본: 뱃지(좌) + 제목(우), 화면 좌측 정렬
+   ── .hdr-right 클래스 추가 시: 제목(좌) + 뱃지(우), 화면 우측 정렬
+   ════════════════════════════════════ */
+
+.hdr-right {
+  justify-content: flex-end;
+}
+
+/* 뱃지를 순서상 뒤로, 정보 블록을 앞으로 */
+.hdr-right .room-badge-acrylic {
+  order: 2;
+}
+
+.hdr-right .ra-info,
+.hdr-right .rb-info,
+.hdr-right .rc-info,
+.hdr-right .rd-info,
+.hdr-right .re-info {
+  order: 1;
+  text-align: right;
+}
+
+/* 작업물 개수 표시(span)는 맨 앞으로 보내서 왼쪽 여백 쪽에 배치 */
+.hdr-right > span {
+  order: 0;
 }
