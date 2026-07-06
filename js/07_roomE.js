@@ -1,5 +1,5 @@
 /* ════════════════════════════════════
-   06_roomD.js — Room D 카드뉴스
+   06_roomE.js — Room E 카드뉴스
    무한 슬라이더(마우스/터치 드래그) + 상세 모달
    ════════════════════════════════════ */
 
@@ -14,7 +14,7 @@
     dragging = false;
   let dragStartX = 0,
     dragStartOff = 0;
-  // const speed = 3;
+  const speed = 3;
   let halfW = 0;
 
   function init() {
@@ -99,63 +99,63 @@
 // ── 모달 ──
 const modalData = [
   {
-    no: "D — 01",
+    no: "E — 01",
     title: "코스메틱 광고",
     year: "2026",
     img: "images/cosmetic.jpg",
-    tools: "photoshop",
+    tools: ["photoshop"],
   },
   {
-    no: "D — 02",
+    no: "E — 02",
     title: "GYM UTO 포스터",
     year: "2026",
     img: "images/fitness.jpg",
     tools: ["Photoshop", "ChatGPT"],
   },
   {
-    no: "D — 03",
+    no: "E — 03",
     title: "휠라 GLIO SNS 광고",
     year: "2026",
     img: "images/glio.jpg",
     tools: ["Photoshop", "ChatGPT"],
   },
   {
-    no: "D — 04",
+    no: "E — 04",
     title: "알로에 스킨토너 광고",
     year: "2026",
     img: "images/aloe.jpg",
     tools: ["Photoshop", "ChatGPT"],
   },
   {
-    no: "D — 05",
+    no: "E — 05",
     title: "히비스커스 에이드 웹 포스터",
     year: "2026",
     img: "images/hibiscus_ade.jpg",
     tools: ["Photoshop", "ChatGPT"],
   },
   {
-    no: "D — 06",
+    no: "E — 06",
     title: "수영복 할인 배너",
     year: "2026",
     img: "images/life_item.jpg",
     tools: ["Photoshop", "ChatGPT"],
   },
   {
-    no: "D — 07",
+    no: "E — 07",
     title: "반려견 굿즈 만들기 SNS 광고",
     year: "2026",
     img: "images/pet.jpg",
     tools: ["Photoshop", "ChatGPT"],
   },
   {
-    no: "D — 08",
+    no: "E — 08",
     title: "베이글 카페 포스터",
     year: "2026",
     img: "images/bagel.jpg",
     tools: ["Photoshop", "ChatGPT"],
   },
   {
-    no: "D — 09",
+    no: "E — 09",
     title: "리뷰 이벤트 광고",
     year: "2026",
     img: "images/review.jpg",
@@ -179,9 +179,6 @@ function openModal(idx) {
     toolsEl.appendChild(chip);
   });
 
-  // ...이 아래 나머지 코드(이미지 처리, 모달 열기 등)는 그대로 두시면 돼요
-
-  // 이미지 1장(img) 또는 여러 장을 세로로 이어붙인 것(imgs)을 둘 다 지원
   const stack = document.getElementById("modal-img-stack");
   if (stack) {
     stack.innerHTML = "";
@@ -194,7 +191,6 @@ function openModal(idx) {
     });
   }
 
-  // 새 카드를 열 때마다 항상 접힌(미리보기) 상태로 초기화
   const imgBox = document.getElementById("modal-img-box");
   const expandBtn = document.getElementById("modal-img-expand");
   if (imgBox) {
@@ -245,12 +241,10 @@ document.getElementById("modal-img-expand")?.addEventListener("click", () => {
   const isExpanded = imgBox.classList.contains("expanded");
 
   if (isExpanded) {
-    // 다시 접기 — 기본 미리보기 높이로 되돌림
     imgBox.style.height = "380px";
     imgBox.classList.remove("expanded");
     btn.textContent = "상세페이지 더보기 ▼";
   } else {
-    // 펼치기 — 이어붙인 이미지(들) 전체 높이만큼 확장
     const fullHeight = stack.scrollHeight;
     imgBox.style.height = fullHeight + "px";
     imgBox.classList.add("expanded");

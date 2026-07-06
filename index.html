@@ -4,22 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YEBIN — Portfolio Gallery</title>
-    <!-- 파비콘 -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="favicon/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-    <link rel="shortcut icon" href="favicon/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="favicon/apple-touch-icon.png"
-    />
-    <link rel="manifest" href="/site.webmanifest" />
-
     <meta property="og:title" content="이예빈 — Portfolio Exhibition" />
     <meta
       property="og:description"
@@ -46,17 +30,23 @@
     <link rel="stylesheet" href="css/04_roomB.css" />
     <link rel="stylesheet" href="css/05_roomC.css" />
     <link rel="stylesheet" href="css/06_roomD.css" />
-    <link rel="stylesheet" href="css/07_ai.css" />
+    <link rel="stylesheet" href="css/07_roomE.css" />
+    <link rel="stylesheet" href="css/08_ai.css" />
     <link rel="stylesheet" href="css/footer.css" />
+
+
     <link rel="stylesheet" href="css/cursor-particles.css" />
     <script src="js/main.js" defer></script>
     <script src="js/01_hero.js" defer></script>
     <script src="js/03_roomA.js" defer></script>
+    <script src="js/04_roomB.js" defer></script>
     <script src="js/05_roomC.js" defer></script>
-    <script src="js/06_roomD.js" defer></script>
+    <!-- <script src="js/06_roomD.js" defer></script> -->
+    <script src="js/07_roomE.js" defer></script>
     <script src="js/cursor-particles.js" defer></script>
   </head>
   <body>
+    <!-- 히어로 섹션  -->
     <nav id="nav">
       <a href="#hero-wrap" class="nav-left" id="nav-logo"
         >YEBIN PORTFOLIO GALLERY</a
@@ -65,8 +55,9 @@
         <li><a href="#about">About Me</a></li>
         <li><a href="#room-a">Web Design &amp; Coding</a></li>
         <li><a href="#room-b">Clone Coding</a></li>
-        <li><a href="#room-c">App Design</a></li>
-        <li><a href="#room-d">Card News</a></li>
+        <li><a href="#room-c">Design</a></li>
+        <li><a href="#room-d">Branding</a></li>
+        <li><a href="#room-e">Card News</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -89,12 +80,12 @@
           <div class="hero-corner tr">DIGITAL DESIGN COLLECTION · 2026</div>
 
           <div class="hero-side-l">
-            <span>UI/UX Designer</span>
+            <span>UI / UX Designer</span>
             <div class="l-divider"></div>
           </div>
 
           <div class="hero-side-r">
-            <p>A curated collection <br />of UI / UX design.</p>
+            <p>A curated collection <br />of digital design.</p>
           </div>
 
           <div class="hero-floor-cover"></div>
@@ -124,6 +115,7 @@
 
     <div class="content-wrap">
       <div class="about-spacer"></div>
+      <!-- About Me  -->
       <section id="about" class="about-mag">
         <div class="mag-rail reveal">
           <div class="mag-dot"></div>
@@ -237,6 +229,7 @@
       </section>
 
       <div id="works">
+        <!-- room A -->
         <div class="room-a" id="room-a">
           <div class="room-a-hdr reveal">
             <div class="room-badge-acrylic">
@@ -246,7 +239,7 @@
             </div>
             <div class="ra-info">
               <div class="ra-tag">Room A</div>
-              <div class="ra-name">웹 디자인 &amp; 코딩</div>
+              <div class="ra-name">WEB DESIGN &amp; CODING</div>
               <div class="ra-desc">디자인부터 HTML/CSS/JS 구현까지</div>
             </div>
             <span
@@ -262,8 +255,24 @@
           <div class="v-stack">
             <div class="v-item">
               <div class="v-artwork-wrap">
-                <div class="v-img">                  
-                  <img src="images/daitda.png" alt="청년다잇다" />                
+                <div class="v-img">
+                  <img src="images/daitda.png" alt="청년다잇다" />
+                  <div class="v-img-overlay">
+                    <a
+                      href="https://www.figma.com/design/efyNMfxWmS4EJ8SjGQp7n4/%EC%B2%AD%EB%85%84%EB%8B%A4%EC%9E%87%EB%8B%A4?t=LKwtwUidEnGRsUMW-1"
+                      class="v-ov-btn"
+                      target="_blank"
+                      rel="noopener"
+                      >프로세스</a
+                    >
+                    <a
+                      href="https://daitda-one.vercel.app/"
+                      class="v-ov-btn"
+                      target="_blank"
+                      rel="noopener"
+                      >작업물</a
+                    >
+                  </div>
                 </div>
               </div>
               <div class="v-cap">
@@ -272,15 +281,14 @@
                 <div class="v-cap-screw-bl"></div>
                 <div class="v-cap-screw-br"></div>
                 <div class="vc-no">A — 01</div>
-                <div class="vc-title">청년다잇다<br />(DAITDA)</div>
-                <div class="vc-type">Web Design &amp; Coding</div>
+                <div class="vc-title">청년다잇다(DAITDA)</div>
+                <div class="vc-period">2026.05.15. - 06.15.</div>
+                <div class="vc-type">웹 디자인 &amp; 코딩</div>
+                <div class="vc-project">팀 프로젝트(2명)</div>
                 <div class="vc-divider"></div>
                 <div class="vc-tools">
-                  Figma / Photoshop / Illustrator<br />HTML · CSS · JavaScript
-                </div>
-                <div class="vc-btns">
-                  <a href="#" class="vc-btn">프로세스</a
-                  ><a href="#" class="vc-btn f">작업물</a>
+                  Figma / Photoshop / Illustrator<br />HTML · CSS ·
+                  JavaScript<br />ChatGPT
                 </div>
               </div>
             </div>
@@ -288,7 +296,26 @@
             <div class="v-item">
               <div class="v-artwork-wrap">
                 <div class="v-img">
-                  <img src="images/hairplus.png" alt="헤어플러스" />
+                  <img
+                    src="images/sneakers_unboxed.png"
+                    alt="스니커즈 언박스드 전시회"
+                  />
+                  <div class="v-img-overlay">
+                    <a
+                      href="https://www.figma.com/design/tMYBGSrbGFvsuf1j7zR2fi/%EC%8A%A4%EB%8B%88%EC%BB%A4%EC%A6%88-%EC%96%B8%EB%B0%95%EC%8A%A4%EB%93%9C-%EB%9E%9C%EB%94%A9%ED%8E%98%EC%9D%B4%EC%A7%80?node-id=0-1&t=HDmcpWnOCpQUXMnq-1"
+                      class="v-ov-btn"
+                      target="_blank"
+                      rel="noopener"
+                      >프로세스</a
+                    >
+                    <a
+                      href="https://hairplus-clone-coding.vercel.app/"
+                      class="v-ov-btn"
+                      target="_blank"
+                      rel="noopener"
+                      >작업물</a
+                    >
+                  </div>
                 </div>
               </div>
               <div class="v-cap">
@@ -297,19 +324,58 @@
                 <div class="v-cap-screw-bl"></div>
                 <div class="v-cap-screw-br"></div>
                 <div class="vc-no">A — 02</div>
-                <div class="vc-title">헤어플러스</div>
-                <div class="vc-type">Web Redesign</div>
+                <div class="vc-title">전시회 스니커즈 언박스드</div>
+                <div class="vc-period">2026.6.16. - 06.23.</div>
+                <div class="vc-type">랜딩페이지 디자인 &amp; 코딩</div>
+                <div class="vc-project">개인 프로젝트</div>
                 <div class="vc-divider"></div>
-                <div class="vc-tools">Figma<br />HTML · CSS · JavaScript</div>
-                <div class="vc-btns">
-                  <a href="#" class="vc-btn">프로세스</a
-                  ><a href="#" class="vc-btn f">작업물</a>
+                <div class="vc-tools">
+                  Figma<br />HTML · CSS · JavaScript<br />ChatGPT
+                </div>
+              </div>
+            </div>
+
+            <div class="v-item">
+              <div class="v-artwork-wrap">
+                <div class="v-img">
+                  <img src="images/hairplus.png" alt="헤어플러스" />
+                  <div class="v-img-overlay">
+                    <a
+                      href="https://www.figma.com/design/EyN537Zr0lpFwU6nrhE65Q/%ED%97%A4%EC%96%B4%ED%94%8C%EB%9F%AC%EC%8A%A4?node-id=0-1&t=LKwtwUidEnGRsUMW-1"
+                      class="v-ov-btn"
+                      target="_blank"
+                      rel="noopener"
+                      >프로세스</a
+                    >
+                    <a
+                      href="https://hairplus-clone-coding.vercel.app/"
+                      class="v-ov-btn"
+                      target="_blank"
+                      rel="noopener"
+                      >작업물</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="v-cap">
+                <div class="v-cap-screw-tl"></div>
+                <div class="v-cap-screw-tr"></div>
+                <div class="v-cap-screw-bl"></div>
+                <div class="v-cap-screw-br"></div>
+                <div class="vc-no">A — 03</div>
+                <div class="vc-title">헤어플러스</div>
+                <div class="vc-period">2026.04.20. - 05.10.</div>
+                <div class="vc-type">웹 리디자인</div>
+                <div class="vc-project">개인 프로젝트</div>
+                <div class="vc-divider"></div>
+                <div class="vc-tools">
+                  Figma<br />HTML · CSS · JavaScript<br />Gemini · ChatGPT
                 </div>
               </div>
             </div>
           </div>
         </div>
-
+        <!-- room B -->
         <div class="room-b" id="room-b">
           <div class="room-b-hdr reveal">
             <div class="room-badge-acrylic">
@@ -319,7 +385,7 @@
             </div>
             <div class="rb-info">
               <div class="rb-tag">Room B</div>
-              <div class="rb-name">클론 코딩</div>
+              <div class="rb-name">CLONE CODING</div>
               <div class="rb-desc">실존 사이트 분석 &amp; 재현 퍼블리싱</div>
             </div>
             <span
@@ -337,53 +403,123 @@
               <div class="h-artwork-wrap">
                 <div class="h-img">
                   <img src="images/starbucks.png" alt="스타벅스 코리아" />
+                  <div class="h-img-overlay">
+                    <a
+                      href="https://clone-starbucks-kappa.vercel.app/"
+                      class="h-ov-btn"
+                      target="_blank"
+                      rel="noopener"
+                      >작업물</a
+                    >
+                  </div>
                 </div>
               </div>
               <div class="h-cap">
                 <div class="hc-no">B — 01</div>
                 <div class="hc-title">스타벅스 코리아</div>
-                <div class="hc-sub">HTML / CSS / JS · jQuery · 2026</div>
+                <div class="hc-period">2026.04.10. - 04.20.</div>
+                <div class="hc-type-tools">
+                  <div class="hc-type">클론 코딩</div>
+                  <div class="hc-tools">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>JQuery</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="h-card">
               <div class="h-artwork-wrap">
                 <div class="h-img">
                   <img src="images/dosiraktong.png" alt="도시락통" />
+                  <div class="h-img-overlay">
+                    <a
+                      href="https://dosiraktong-clone-sigma.vercel.app/"
+                      class="h-ov-btn"
+                      target="_blank"
+                      rel="noopener"
+                      >작업물</a
+                    >
+                  </div>
                 </div>
               </div>
               <div class="h-cap">
                 <div class="hc-no">B — 02</div>
                 <div class="hc-title">도시락통</div>
-                <div class="hc-sub">HTML / CSS / JavaScript · 2026</div>
+                <div class="hc-period">2026.04.21. - 04.25.</div>
+                <div class="hc-type-tools">
+                  <div class="hc-type">클론 코딩</div>
+                  <div class="hc-tools">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="h-card">
               <div class="h-artwork-wrap">
                 <div class="h-img">
                   <img src="images/sm.png" alt="남선알미늄" />
+                  <div class="h-img-overlay">
+                    <a
+                      href="https://stxclonestudy.vercel.app/"
+                      class="h-ov-btn"
+                      target="_blank"
+                      rel="noopener"
+                      >작업물</a
+                    >
+                  </div>
                 </div>
               </div>
               <div class="h-cap">
                 <div class="hc-no">B — 03</div>
                 <div class="hc-title">남선알미늄</div>
-                <div class="hc-sub">HTML / CSS / JavaScript · 2025</div>
+                <div class="hc-period">2026.05.05. - 05.13.</div>
+                <div class="hc-type-tools">
+                  <div class="hc-type">클론 코딩</div>
+                  <div class="hc-tools">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="h-card">
               <div class="h-artwork-wrap">
                 <div class="h-img">
                   <img src="images/google.png" alt="구글" />
+                  <div class="h-img-overlay">
+                    <a
+                      href="https://clone-coding-google.vercel.app/"
+                      class="h-ov-btn"
+                      target="_blank"
+                      rel="noopener"
+                      >작업물</a
+                    >
+                  </div>
                 </div>
               </div>
               <div class="h-cap">
                 <div class="hc-no">B — 04</div>
                 <div class="hc-title">구글</div>
-                <div class="hc-sub">HTML / CSS / JavaScript · 2026</div>
+                <div class="hc-period">2026.04.04. - 04.07.</div>
+                <div class="hc-type-tools">
+                  <div class="hc-type">클론 코딩</div>
+                  <div class="hc-tools">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- room C -->
         <div class="room-c" id="room-c">
           <div class="room-c-hdr reveal">
             <div class="room-badge-acrylic">
@@ -393,7 +529,7 @@
             </div>
             <div class="rc-info">
               <div class="rc-tag">Room C</div>
-              <div class="rc-name">앱 디자인</div>
+              <div class="rc-name">DESIGN</div>
             </div>
             <span
               style="
@@ -402,14 +538,16 @@
                 color: var(--ink2);
                 opacity: 0.35;
               "
-              >1 Work</span
+              >2 Works</span
             >
           </div>
+
+          <!-- 앱 디자인 -->
           <div class="app-showcase" id="app-showcase">
             <div class="app-phone-group" id="app-phone-group">
               <div class="app-phone-wrap">
                 <img
-                  src="images/phone-img.png"
+                  src="images/all-ticket.png"
                   alt="ALL Ticket 앱 디자인"
                   class="app-phone-img"
                 />
@@ -420,42 +558,106 @@
                 <div class="app-cap-screw-bl"></div>
                 <div class="app-cap-screw-br"></div>
                 <div class="ac-no">C — 01</div>
-                <div class="ac-title">앱 프로젝트 1</div>
-                <div class="ac-type">Mobile App UI/UX</div>
+                <div class="ac-title">올티켓(All Ticket)</div>
+                <div class="ac-period">2026.05.15. - 06.15.</div>
+                <div class="ac-type">앱 디자인</div>
+                <div class="ac-project">개인 프로젝트</div>
                 <div class="ac-divider"></div>
-                <div class="ac-tools">
-                  Figma / Protopie<br />Illustrator<br />2025 · 팀 프로젝트
-                </div>
-                <div class="ac-btns">
-                  <a href="#" class="ac-btn">프로세스</a
-                  ><a href="#" class="ac-btn f">작업물</a>
-                </div>
+                <div class="ac-tools">Figma · Gemini</div>
               </div>
             </div>
             <div class="app-detail-box" id="app-detail-box">
               <div class="adb-no">C — 01 · Detail</div>
-              <div class="adb-title">앱 프로젝트 1<br />상세 설명</div>
               <div class="adb-divider"></div>
               <p class="adb-desc">
-                사용자 리서치부터 와이어프레임, 고충실도 프로토타입까지 전
+                사용자 리서치부터 와이어프레임, 고충실도 프로토타입까지<br />전
                 과정을 직접 설계했습니다.<br /><br />직관적인 내비게이션과
                 일관된 인터랙션 패턴으로 사용성을 개선했습니다.
               </p>
-              <div class="adb-meta">
-                <div class="adb-meta-item">
-                  <span>Role</span><strong>UI/UX Design</strong>
+              <div class="ac-btns">
+                <a
+                  href="https://www.figma.com/design/7ztDszKvCeKtD728LtXM90/%EC%A0%9C%EB%AA%A9-%EC%97%86%EC%9D%8C?node-id=0-1&t=J7QLUUcWQT5gvBrD-1"
+                  class="ac-btn"
+                  >프로세스</a
+                ><a
+                  href="https://www.figma.com/proto/7ztDszKvCeKtD728LtXM90/%EC%A0%9C%EB%AA%A9-%EC%97%86%EC%9D%8C?node-id=162-485&t=wfG1KAjtw64TcCgn-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1"
+                  class="ac-btn f"
+                  >작업물</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- 상세 페이지 리디자인 -->
+          <div class="rc-showcase" id="rc-showcase">
+            <div class="rc-cap">
+              <div class="rc-cap-screw-tl"></div>
+              <div class="rc-cap-screw-tr"></div>
+              <div class="rc-cap-screw-bl"></div>
+              <div class="rc-cap-screw-br"></div>
+              <div class="rc-no">C — 02</div>
+              <div class="rc-title">오니스트 트리플 콜라겐</div>
+              <div class="rc-period">2026.06.22. - 06.25.</div>
+              <div class="rc-type">상세 페이지 리디자인</div>
+              <div class="rc-project">개인 프로젝트</div>
+              <div class="rc-divider"></div>
+              <div class="rc-tools">Photoshop · ChatGPT</div>
+            </div>
+
+            <div class="rc-artwork-wrap">
+              <div class="rc-img">
+                <img
+                  src="images/owinst_thumnail_3.jpg"
+                  alt="오니스트 트리플 콜라겐 상세페이지"
+                  class="rc-img-el"
+                />
+                <div class="rc-img-overlay">
+                  <a
+                    href="#"
+                    class="rc-ov-btn"
+                    onclick="
+                      openRcModal();
+                      return false;
+                    "
+                    >작업물</a
+                  >
                 </div>
-                <div class="adb-meta-item">
-                  <span>Period</span><strong>2025.03 — 2025.06</strong>
+              </div>
+            </div>
+
+            <!-- 상세 페이지 전용 모달 -->
+            <div
+              class="modal-overlay"
+              id="rc-modal"
+              onclick="closeRcModal(event)"
+            >
+              <div class="modal-box">
+                <button class="modal-close" onclick="closeRcModal(event)">
+                  ✕
+                </button>
+                <div class="modal-img-box" id="rc-modal-img-box">
+                  <div class="modal-img-stack" id="rc-modal-img-stack"></div>
+                  <button
+                    type="button"
+                    class="modal-img-expand"
+                    id="rc-modal-img-expand"
+                  >
+                    더보기 ▼
+                  </button>
                 </div>
-                <div class="adb-meta-item">
-                  <span>Team</span><strong>4인 팀 프로젝트</strong>
+                <div class="modal-body">
+                  <div class="modal-no">C — 02</div>
+                  <div class="modal-title">오니스트 트리플 콜라겐</div>
+                  <div class="modal-type">상세 페이지 리디자인 · Photoshop</div>
+                  <div class="modal-divider"></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- room D -->
+       <!-- room D -->
         <div class="room-d" id="room-d">
           <div class="room-d-hdr reveal">
             <div class="room-badge-acrylic">
@@ -465,8 +667,103 @@
             </div>
             <div class="rd-info">
               <div class="rd-tag">Room D</div>
-              <div class="rd-name">카드뉴스</div>
-              <div class="rd-desc">정보를 시각적으로 재구성한 콘텐츠</div>
+              <div class="rd-name">브랜딩</div>
+            </div>
+            <span
+              style="
+                font-size: 0.62rem;
+                letter-spacing: 0.15em;
+                color: var(--ink2);
+                opacity: 0.35;
+              "
+              >2 Works</span
+            >
+          </div>
+
+          <div class="rd-stack">
+            <div class="rd-item">
+              <div class="rd-artwork-wrap">
+                <div class="rd-img">
+                  <img
+                    src="images/terarosa.png"
+                    alt="작업물 이미지"
+                    class="rd-img-el"
+                  />
+                  <div class="rd-img-overlay">
+                    <a
+                      href="https://einnivd.cafe24.com/"
+                      class="rd-ov-btn"
+                      target="_blank"
+                      rel="noopener"
+                      >작업물</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="rd-cap">
+                <div class="rd-cap-screw-tl"></div>
+                <div class="rd-cap-screw-tr"></div>
+                <div class="rd-cap-screw-bl"></div>
+                <div class="rd-cap-screw-br"></div>
+                <div class="rd-no">D — 01</div>
+                <div class="rd-title">테라로사</div>
+                <div class="rd-period">2026.06.26. - 06.30.</div>
+                <div class="rd-type">리브랜딩</div>
+                <div class="rd-project">개인 프로젝트</div>
+                <div class="rd-divider"></div>
+                <div class="rd-tools">Photoshop · illustrator <br> ChatGPT</div>
+              </div>
+            </div>
+
+            <div class="rd-item">
+              <div class="rd-artwork-wrap">
+                <div class="rd-img">
+                  <img
+                    src="images/soseorok.jpg"
+                    alt="작업물 이미지 2"
+                    class="rd-img-el"
+                  />
+                  <div class="rd-img-overlay">
+                    <a
+                      href="#"
+                      class="rd-ov-btn"
+                      target="_blank"
+                      rel="noopener"
+                      >작업물</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="rd-cap">
+                <div class="rd-cap-screw-tl"></div>
+                <div class="rd-cap-screw-tr"></div>
+                <div class="rd-cap-screw-bl"></div>
+                <div class="rd-cap-screw-br"></div>
+                <div class="rd-no">D — 02</div>
+                <div class="rd-title">소서록</div>
+                <div class="rd-period">2026.05.17. - 05.19.</div>
+                <div class="rd-type">브랜딩</div>
+                <div class="rd-project">개인 프로젝트</div>
+                <div class="rd-divider"></div>
+                <div class="rd-tools">Photoshop · illustrator <br> ChatGPT</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       <!-- room E -->
+        <div class="room-e" id="room-e">
+          <div class="room-e-hdr reveal">
+            <div class="room-badge-acrylic">
+              <div class="rb-screw-bl"></div>
+              <div class="rb-screw-br"></div>
+              <span class="rb-sm">Room</span><span class="rb-letter">E</span>
+            </div>
+            <div class="re-info">
+              <div class="re-tag">Room E</div>
+              <div class="re-name">CARD NEWS</div>
             </div>
             <span
               style="
@@ -496,8 +793,8 @@
                   </div>
                 </div>
                 <div class="cn-meta">
-                  <div class="cn-no">D — 01</div>
-                  <div class="cn-title">카드뉴스 01</div>
+                  <div class="cn-no">E — 01</div>
+                  <div class="cn-title">코스메틱 광고</div>
                 </div>
               </div>
               <div class="cn-card" onclick="openModal(1)">
@@ -516,8 +813,8 @@
                   </div>
                 </div>
                 <div class="cn-meta">
-                  <div class="cn-no">D — 02</div>
-                  <div class="cn-title">카드뉴스 02</div>
+                  <div class="cn-no">E — 02</div>
+                  <div class="cn-title">GYM UTO 포스터</div>
                 </div>
               </div>
               <div class="cn-card" onclick="openModal(2)">
@@ -536,16 +833,16 @@
                   </div>
                 </div>
                 <div class="cn-meta">
-                  <div class="cn-no">D — 03</div>
-                  <div class="cn-title">카드뉴스 03</div>
+                  <div class="cn-no">E — 03</div>
+                  <div class="cn-title">휠라 GLIO SNS 광고</div>
                 </div>
               </div>
               <div class="cn-card" onclick="openModal(3)">
                 <div class="cn-img">
                   <div class="cn-img-inner">
                     <img
-                      src="images/ownist_thumnail_2.jpg"
-                      alt="ownist"
+                      src="images/aloe_thumnail.jpg"
+                      alt="aloe skin toner"
                       style="
                         width: 100%;
                         height: 100%;
@@ -556,31 +853,11 @@
                   </div>
                 </div>
                 <div class="cn-meta">
-                  <div class="cn-no">D — 04</div>
-                  <div class="cn-title">카드뉴스 04</div>
+                  <div class="cn-no">E — 04</div>
+                  <div class="cn-title">알로에 스킨토너 광고</div>
                 </div>
               </div>
               <div class="cn-card" onclick="openModal(4)">
-                <div class="cn-img">
-                  <div class="cn-img-inner">
-                    <img
-                      src="images/sneakers_thumnail.png"
-                      alt="sneakers"
-                      style="
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        display: block;
-                      "
-                    />
-                  </div>
-                </div>
-                <div class="cn-meta">
-                  <div class="cn-no">D — 05</div>
-                  <div class="cn-title">카드뉴스 05</div>
-                </div>
-              </div>
-              <div class="cn-card" onclick="openModal(5)">
                 <div class="cn-img">
                   <div class="cn-img-inner">
                     <img
@@ -596,11 +873,11 @@
                   </div>
                 </div>
                 <div class="cn-meta">
-                  <div class="cn-no">D — 06</div>
-                  <div class="cn-title">카드뉴스 06</div>
+                  <div class="cn-no">E — 05</div>
+                  <div class="cn-title">히비스커스 에이드 웹 포스터</div>
                 </div>
               </div>
-              <div class="cn-card" onclick="openModal(6)">
+              <div class="cn-card" onclick="openModal(5)">
                 <div class="cn-img">
                   <div class="cn-img-inner">
                     <img
@@ -616,8 +893,68 @@
                   </div>
                 </div>
                 <div class="cn-meta">
-                  <div class="cn-no">D — 07</div>
-                  <div class="cn-title">카드뉴스 07</div>
+                  <div class="cn-no">E — 06</div>
+                  <div class="cn-title">수영복 할인 배너</div>
+                </div>
+              </div>
+              <div class="cn-card" onclick="openModal(6)">
+                <div class="cn-img">
+                  <div class="cn-img-inner">
+                    <img
+                      src="images/pet.jpg"
+                      alt="pet"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cn-meta">
+                  <div class="cn-no">E — 07</div>
+                  <div class="cn-title">반려견 굿즈 만들기 SNS 광고</div>
+                </div>
+              </div>
+              <div class="cn-card" onclick="openModal(7)">
+                <div class="cn-img">
+                  <div class="cn-img-inner">
+                    <img
+                      src="images/bagel_thumnail.jpg"
+                      alt="bagel-poster"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cn-meta">
+                  <div class="cn-no">E — 08</div>
+                  <div class="cn-title">베이글 카페 포스터</div>
+                </div>
+              </div>
+              <div class="cn-card" onclick="openModal(8)">
+                <div class="cn-img">
+                  <div class="cn-img-inner">
+                    <img
+                      src="images/review.jpg"
+                      alt="review-banner"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cn-meta">
+                  <div class="cn-no">E — 09</div>
+                  <div class="cn-title">리뷰 이벤트 광고</div>
                 </div>
               </div>
               <div class="cn-card" onclick="openModal(0)">
@@ -625,7 +962,7 @@
                   <div class="cn-img-inner">
                     <img
                       src="images/cosmetic.jpg"
-                      alt=""
+                      alt="cosmetic"
                       style="
                         width: 100%;
                         height: 100%;
@@ -636,8 +973,8 @@
                   </div>
                 </div>
                 <div class="cn-meta">
-                  <div class="cn-no">D — 01</div>
-                  <div class="cn-title">카드뉴스 01</div>
+                  <div class="cn-no">E — 01</div>
+                  <div class="cn-title">코스메틱 광고</div>
                 </div>
               </div>
               <div class="cn-card" onclick="openModal(1)">
@@ -645,7 +982,7 @@
                   <div class="cn-img-inner">
                     <img
                       src="images/fitness_thumnail.jpg"
-                      alt=""
+                      alt="fitness"
                       style="
                         width: 100%;
                         height: 100%;
@@ -656,8 +993,8 @@
                   </div>
                 </div>
                 <div class="cn-meta">
-                  <div class="cn-no">D — 02</div>
-                  <div class="cn-title">카드뉴스 02</div>
+                  <div class="cn-no">E — 02</div>
+                  <div class="cn-title">GYM UTO 포스터</div>
                 </div>
               </div>
               <div class="cn-card" onclick="openModal(2)">
@@ -665,7 +1002,7 @@
                   <div class="cn-img-inner">
                     <img
                       src="images/glio.jpg"
-                      alt=""
+                      alt="glio"
                       style="
                         width: 100%;
                         height: 100%;
@@ -676,16 +1013,16 @@
                   </div>
                 </div>
                 <div class="cn-meta">
-                  <div class="cn-no">D — 03</div>
-                  <div class="cn-title">카드뉴스 03</div>
+                  <div class="cn-no">E — 03</div>
+                  <div class="cn-title">휠라 GLIO SNS 광고</div>
                 </div>
               </div>
               <div class="cn-card" onclick="openModal(3)">
                 <div class="cn-img">
                   <div class="cn-img-inner">
                     <img
-                      src="images/ownist_thumnail_2.jpg"
-                      alt=""
+                      src="images/aloe_thumnail.jpg"
+                      alt="aloe skin toner"
                       style="
                         width: 100%;
                         height: 100%;
@@ -696,16 +1033,16 @@
                   </div>
                 </div>
                 <div class="cn-meta">
-                  <div class="cn-no">D — 04</div>
-                  <div class="cn-title">카드뉴스 04</div>
+                  <div class="cn-no">E — 04</div>
+                  <div class="cn-title">알로에 스킨토너 광고</div>
                 </div>
               </div>
               <div class="cn-card" onclick="openModal(4)">
                 <div class="cn-img">
                   <div class="cn-img-inner">
                     <img
-                      src="images/sneakers_thumnail.png"
-                      alt=""
+                      src="images/hibiscus_ade.jpg"
+                      alt="hibiscus ade"
                       style="
                         width: 100%;
                         height: 100%;
@@ -716,16 +1053,16 @@
                   </div>
                 </div>
                 <div class="cn-meta">
-                  <div class="cn-no">D — 05</div>
-                  <div class="cn-title">카드뉴스 05</div>
+                  <div class="cn-no">E — 05</div>
+                  <div class="cn-title">히비스커스 에이드 웹 포스터</div>
                 </div>
               </div>
               <div class="cn-card" onclick="openModal(5)">
                 <div class="cn-img">
                   <div class="cn-img-inner">
                     <img
-                      src="images/hibiscus_ade.jpg"
-                      alt=""
+                      src="images/life_item.jpg"
+                      alt="life item"
                       style="
                         width: 100%;
                         height: 100%;
@@ -736,16 +1073,16 @@
                   </div>
                 </div>
                 <div class="cn-meta">
-                  <div class="cn-no">D — 06</div>
-                  <div class="cn-title">카드뉴스 06</div>
+                  <div class="cn-no">E — 06</div>
+                  <div class="cn-title">수영복 할인 배너</div>
                 </div>
               </div>
               <div class="cn-card" onclick="openModal(6)">
                 <div class="cn-img">
                   <div class="cn-img-inner">
                     <img
-                      src="images/life_item.jpg"
-                      alt=""
+                      src="images/pet.jpg"
+                      alt="pet"
                       style="
                         width: 100%;
                         height: 100%;
@@ -756,8 +1093,48 @@
                   </div>
                 </div>
                 <div class="cn-meta">
-                  <div class="cn-no">D — 07</div>
-                  <div class="cn-title">카드뉴스 07</div>
+                  <div class="cn-no">E — 07</div>
+                  <div class="cn-title">반려견 굿즈 만들기 SNS 광고</div>
+                </div>
+              </div>
+              <div class="cn-card" onclick="openModal(7)">
+                <div class="cn-img">
+                  <div class="cn-img-inner">
+                    <img
+                      src="images/bagel_thumnail.jpg"
+                      alt="bagel-poster"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cn-meta">
+                  <div class="cn-no">E — 08</div>
+                  <div class="cn-title">베이글 카페 포스터</div>
+                </div>
+              </div>
+              <div class="cn-card" onclick="openModal(8)">
+                <div class="cn-img">
+                  <div class="cn-img-inner">
+                    <img
+                      src="images/review.jpg"
+                      alt="review-banner"
+                      style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                      "
+                    />
+                  </div>
+                </div>
+                <div class="cn-meta">
+                  <div class="cn-no">E — 09</div>
+                  <div class="cn-title">리뷰 이벤트 광고</div>
                 </div>
               </div>
             </div>
@@ -772,7 +1149,7 @@
                   class="modal-img-expand"
                   id="modal-img-expand"
                 >
-                  상세페이지 더보기 ▼
+                  더보기 ▼
                 </button>
               </div>
               <div class="modal-body">
@@ -782,9 +1159,8 @@
                   Card News · Visual Design
                 </div>
                 <div class="modal-divider"></div>
-                <div class="modal-desc" id="modal-desc">
-                  카드뉴스 작업물입니다. 정보를 시각적으로 재구성하여
-                  전달합니다.
+                <div class="modal-tools" id="modal-tools">
+                  <span class="modal-tool-chip"></span>
                 </div>
               </div>
             </div>
@@ -792,7 +1168,7 @@
         </div>
       </div>
 
-      <!-- ══ AI 활용 ══ -->
+      <!-- AI 활용 -->
       <section class="ai-mag" id="ai">
         <div class="ai-inner">
           <div class="mag-rail reveal">
@@ -801,22 +1177,19 @@
             <div class="mag-side-label">UI / UX Designer</div>
           </div>
           <div class="ai-main">
-            <div class="ai-topbar reveal">
-              <div class="ai-no">06</div>
-              <div class="ai-page-hint">01 / 02</div>
-            </div>
+            <div class="ai-topbar reveal"></div>
             <div class="ai-head reveal">
               <h2 class="ai-title">AI 활용</h2>
               <div class="ai-title-bar"></div>
               <p class="ai-philosophy">
-                AI를 현재의 작업 과정에 전략적으로 활용하여<br />
-                더 빠르고 효율적으로, 더 좋은 결과를 만듭니다.
+                AI를 현재의 작업 과정에 전략적으로 활용하여 더 빠르고
+                효율적으로, 더 좋은 결과를 만듭니다.
               </p>
             </div>
 
             <div class="ai-section-hdr reveal">
               <div class="ai-section-no">01</div>
-              <div class="ai-section-title">사용한 AI 도구</div>
+              <div class="ai-section-title">활용한 AI 도구</div>
             </div>
             <div class="ai-tools reveal">
               <div class="ai-tool-card tool-chatgpt">
@@ -915,36 +1288,39 @@
                 <div class="ai-result-icon">◷</div>
                 <div class="ai-result-title">리서치 시간 단축</div>
                 <p class="ai-result-desc">
-                  방대한 정보를 빠르게 정리하고 핵심 인사이트를 도출했습니다.
+                  방대한 정보를 빠르게 정리하고 <br />
+                  핵심 인사이트를 도출했습니다.
                 </p>
               </div>
               <div class="ai-result-card">
                 <div class="ai-result-icon">✧</div>
                 <div class="ai-result-title">아이디어 다양화</div>
                 <p class="ai-result-desc">
-                  다양한 관점의 아이디어를 빠르게 탐색하고 비교했습니다.
+                  다양한 관점의 아이디어를<br />빠르게 탐색하고 비교했습니다.
                 </p>
               </div>
               <div class="ai-result-card">
                 <div class="ai-result-icon">↗</div>
                 <div class="ai-result-title">프로토타입 제작 속도 향상</div>
                 <p class="ai-result-desc">
-                  반복 작업을 자동화하고 초기 시안을 빠르게 제작할 수 있습니다.
+                  반복 작업을 자동화하고 초기 시안을<br />
+                  빠르게 제작할 수 있습니다.
                 </p>
               </div>
               <div class="ai-result-card">
                 <div class="ai-result-icon">&lt;/&gt;</div>
                 <div class="ai-result-title">개발 생산성 향상</div>
                 <p class="ai-result-desc">
-                  코드 구현과 디버깅 시간을 줄여 개발 효율을 높일 수 있습니다.
+                  코드 구현과 디버깅 시간을 줄여<br />
+                  개발 효율을 높일 수 있습니다.
                 </p>
               </div>
               <div class="ai-result-card">
                 <div class="ai-result-icon">✦</div>
                 <div class="ai-result-title">디자인 품질 향상</div>
                 <p class="ai-result-desc">
-                  반복 작업은 효율적으로 해결하고 핵심에 집중하여 완성도를
-                  높입니다.
+                  반복 작업은 효율적으로 해결하고<br />
+                  핵심에 집중하여 완성도를 높입니다.
                 </p>
               </div>
             </div>
@@ -954,7 +1330,7 @@
 
       <section class="last" id="contact">
         <div class="reveal">
-          <div class="last-no">No.999 — Exit · Gallery</div>
+          <div class="last-no">Exit · Gallery</div>
           <h2 class="last-title">
             함께<br /><em class="last-em">만들어요</em>
           </h2>
@@ -965,33 +1341,37 @@
           </p>
         </div>
         <div class="ext-links reveal">
-          <a href="#" class="ext-link"
+          <a
+            href="https://perpetual-skate-e09.notion.site/Yebin-s-Portfolio-97fc98bc0946837ba42e81164d193dd8?source=copy_link"
+            class="ext-link"
             ><div class="ext-l">
-              <div class="ext-icon ei-n">N</div>
-              <div>
-                <div class="ext-label">Portfolio</div>
-                <div class="ext-val">Notion 포트폴리오</div>
+              <div class="ext-icon ei-n">
+                <img src="images/notion_logo.png" alt="노션 로고" />
               </div>
+              <div class="ext-label">PORTFOLIO</div>
+              <div class="ext-val">Notion 포트폴리오</div>
             </div>
             <span class="ext-arr">↗</span></a
           >
-          <a href="#" class="ext-link"
+          <a href="https://github.com/einnivd" class="ext-link"
             ><div class="ext-l">
-              <div class="ext-icon ei-g">Git</div>
-              <div>
-                <div class="ext-label">Code</div>
-                <div class="ext-val">GitHub</div>
+              <div class="ext-icon ei-g">
+                <img src="images/github_logo.png" alt="깃허브 로고" />
               </div>
+
+              <div class="ext-label">Code</div>
+              <div class="ext-val">GitHub</div>
             </div>
             <span class="ext-arr">↗</span></a
           >
           <a href="mailto:yelk0427@gmail.com" class="ext-link"
             ><div class="ext-l">
-              <div class="ext-icon ei-m">✉</div>
-              <div>
-                <div class="ext-label">Contact</div>
-                <div class="ext-val">이메일 보내기</div>
+              <div class="ext-icon ei-m">
+                <img src="images/gmail_logo.png" alt="이메일 로고" />
               </div>
+
+              <div class="ext-label">Contact</div>
+              <div class="ext-val">이메일 보내기</div>
             </div>
             <span class="ext-arr">↗</span></a
           >

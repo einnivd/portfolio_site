@@ -21,15 +21,33 @@ if (window.location.hash) {
 
 // ── 새로고침 시 브라우저가 이전 스크롤 위치를 자동 복원하지 못하게 막기 ──
 // (라이브 리로드로 HTML 저장할 때마다 문서 높이가 바뀌면서, 이전 스크롤값이
-//  새 문서의 최대 범위를 넘어가 맨 아래(footer)로 튕기는 현상 방지)
+//  새 문서의 최대 범위를 넘어가 맨 아래(footer)로 튕기는 현상 방지 —
+//  브라우저 자체 복원 대신, 아래 sessionStorage 기반 로직으로 직접 제어)
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
-window.scrollTo(0, 0);
+
+// ── 작업 중 코드 저장 → 라이브 리로드돼도 보던 화면 위치 그대로 유지 ──
+// beforeunload 시점(리로드 직전)에 현재 스크롤 위치를 sessionStorage에 저장해두고,
+// 새로 로드된 페이지에서 그 값을 읽어 그 자리로 즉시 복원한다.
+// (sessionStorage는 새로고침에도 유지되고, 탭을 완전히 닫으면 사라짐)
+const SCROLL_KEY = 'yebin-scroll-pos';
+
+window.addEventListener('beforeunload', () => {
+  sessionStorage.setItem(SCROLL_KEY, String(window.scrollY));
+});
+
+const savedScrollY = sessionStorage.getItem(SCROLL_KEY);
+if (savedScrollY !== null) {
+  window.scrollTo(0, parseInt(savedScrollY, 10));
+} else {
+  window.scrollTo(0, 0);
+}
 
 // ── LOAD ──
 window.addEventListener('load', () => {
   fitHeroName(); // 01_hero.js에 정의
+  updateHeroZoom(); // 01_hero.js에 정의 — 복원된 위치에 맞춰 히어로/About 상태를 즉시 동기화
 });
 
 // ── NAV 스크롤 상태 + 히어로 줌 갱신 트리거 ──
@@ -113,7 +131,7 @@ document.querySelectorAll('#nav-menu a').forEach(link => {
   link.addEventListener('mouseenter', () => {
     const pick = holoColors[Math.floor(Math.random() * holoColors.length)];
     const colorValue = getComputedStyle(document.documentElement).getPropertyValue(pick).trim();
-    link.style.background = hexToRgba(colorValue, 0.45); // 0.45 정도만 불투명 — 뒤의 입자가 비쳐 보이게
+    link.style.background = hexToRgba(colorValue, 0.6); // 0.45 정도만 불투명 — 뒤의 입자가 비쳐 보이게
   });
   link.addEventListener('mouseleave', () => {
     link.style.background = '';

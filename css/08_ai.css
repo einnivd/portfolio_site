@@ -32,24 +32,10 @@
   justify-content: space-between;
   margin-bottom: 0.5rem;
 }
-.ai-no {
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  color: var(--ink2);
-  opacity: 0.55;
-}
-.ai-page-hint {
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  color: #a88bd8;
-  opacity: 0.7;
-}
-
 .ai-head {
   margin-bottom: 3rem;
 }
 .ai-title {
-  font-family: "Cormorant Garamond", serif;
   font-size: clamp(2.8rem, 4.4vw, 3.8rem);
   font-weight: 500;
   color: var(--ink);
@@ -63,10 +49,10 @@
   margin-bottom: 1.4rem;
 }
 .ai-philosophy {
-  font-size: 0.92rem;
+  font-size: 1.2rem;
   line-height: 1.85;
   color: var(--ink2);
-  max-width: 620px;
+  max-width: 800px;
 }
 
 /* ── 01 사용한 AI 도구 ── */
@@ -79,14 +65,13 @@
   border-top: 1px solid var(--rule);
 }
 .ai-section-no {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.9rem;
+  font-size: 2.5rem;
   font-weight: 600;
   color: #a88bd8;
   line-height: 1;
 }
 .ai-section-title {
-  font-size: 1.05rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: var(--ink);
 }
@@ -103,7 +88,7 @@
   padding: 1.5rem 1.3rem;
   background: rgba(255, 255, 255, 0.4);
 }
-/* 로고 이미지를 직접 넣을 자리 — 점선 빈 박스만 남기고 안쪽은 비워둠 */
+/* ai Tool 아이콘 */
 .ai-tool-icon {
   width: 40px;
   height: 40px;
@@ -120,7 +105,7 @@
   display: block;
 }
 .ai-tool-name {
-  font-size: 0.95rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--ink);
   margin-bottom: 0.8rem;
@@ -130,7 +115,8 @@
   margin-bottom: 1.1rem;
 }
 .ai-tool-list li {
-  font-size: 0.76rem;
+  font-size: 1rem;
+  font-weight: 500;
   color: var(--ink2);
   line-height: 1.9;
   padding-left: 0.9rem;
@@ -149,7 +135,7 @@
   gap: 0.4rem;
 }
 .ai-tag {
-  font-size: 0.58rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -185,10 +171,10 @@
   align-items: center;
   justify-content: center;
   color: #a88bd8;
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 .ai-result-title {
-  font-size: 0.92rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--ink);
   margin-bottom: 0.5rem;
@@ -197,8 +183,9 @@
   display: inline-block;
 }
 .ai-result-desc {
-  font-size: 0.76rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.7;
   color: var(--ink2);
   margin-top: 0.8rem;
   text-align: left;

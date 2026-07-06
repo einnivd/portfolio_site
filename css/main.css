@@ -141,7 +141,7 @@ nav.scrolled {
   color: rgba(26, 23, 20, 0.5);
 }
 .nav-menu {
-  position: relative; /* z-index를 적용하려면 position 필요 — cursor-particles보다 위에 확실히 뜨게 */
+  position: relative; 
   z-index: 2;
   font-size: 0.8rem;
   letter-spacing: 0.15em;
@@ -160,7 +160,6 @@ nav.scrolled {
 }
 .nav-menu a {
   font-size: 1rem;
-  letter-spacing: 0.2em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--ink2);
@@ -171,7 +170,13 @@ nav.scrolled {
 .nav-menu a:hover {
   color: var(--ink);
 }
-
+/* room제목 */
+.ra-tag,
+.rb-tag,
+.rc-tag,
+.rd-tag{
+  
+}
 /* ── 공통 유틸리티 ── */
 .content-wrap {
   position: relative;
@@ -298,6 +303,20 @@ nav.scrolled {
   font-size: 0.82rem;
   color: var(--ink2);
   line-height: 1.9;
+}
+.modal-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+.modal-tool-chip {
+  font-size: 0.7rem;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--rule);
+  border-radius: 20px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.5);
 }
 .modal-close {
   position: absolute;

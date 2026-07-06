@@ -1,51 +1,189 @@
 /* ════════════════════════════════════
    04-room-b.css — Room B (클론 코딩) · 가로 정렬, 홀로그램 hover
    ════════════════════════════════════ */
-.room-b{background:var(--bg2);padding:5rem 0;}
-.room-b-hdr{padding:0 2.5rem 3rem;display:flex;align-items:flex-end;gap:2rem;}
-.rb-info{flex:1;}
-.rb-tag{font-size:.52rem;letter-spacing:.38em;text-transform:uppercase;color:var(--ink2);opacity:.4;margin-bottom:.35rem;}
-.rb-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,2.5vw,2.3rem);font-weight:300;color:var(--ink);}
-.rb-desc{font-size:.65rem;color:var(--ink2);margin-top:.3rem;}
+.room-b {
+  background: var(--bg2);
+  padding: 5rem 0;
+}
+.room-b-hdr {
+  padding: 0 2.5rem 3rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+}
+.rb-info {
+  flex: 1;
+}
+.rb-tag {
+  font-size: 0.52rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--ink2);
+  opacity: 0.4;
+  margin-bottom: 0.35rem;
+}
+.rb-name {
+  font-size: clamp(1.6rem, 2.5vw, 2.3rem);
+  font-weight: 500;
+  color: var(--ink);
+}
+.rb-desc {
+  font-size: 0.65rem;
+  color: var(--ink2);
+  margin-top: 0.3rem;
+}
 
 /* 그리드 — 작업물이 위/아래 2개씩(2x2)로 배열 */
-.h-track{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem 1.5rem;padding:0 2.5rem;}
-.h-card{position:relative;cursor:pointer;}
+.h-track {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 5rem;
+  padding: 0 2.5rem;
+}
+.h-card {
+  position: relative;
+  cursor: pointer;
+}
 
 /* 홀로그램 외곽선 hover — 이미지 감싸는 래퍼에 적용 */
-.h-artwork-wrap{
-  position:relative;
-  border-radius:4px;
-  padding:10px;
-  background:rgba(26,23,20,.3);
-  transform:translateY(0);
-  transition:background .4s ease,box-shadow .4s ease,transform .4s cubic-bezier(.4,0,.2,1);
+.h-artwork-wrap {
+  position: relative;
+  border-radius: 4px;
+  padding: 10px;
+  background: rgba(26, 23, 20, 0.3);
+  transform: translateY(0);
+  transition:
+    background 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.h-card:hover .h-artwork-wrap{
-  transform:translateY(-8px);
-  background:linear-gradient(135deg,#E8D5FF,#C8E8FF,#C8F5E8,#FFF5C8,#FFD5E8,#E8D5FF);
-  background-size:300% 300%;
-  animation:holoFlow 3s ease infinite;
-  box-shadow:0 28px 60px rgba(26,23,20,.4);
+.h-card:hover .h-artwork-wrap {
+  transform: translateY(-8px);
+  background: linear-gradient(
+    135deg,
+    #e8d5ff,
+    #c8e8ff,
+    #c8f5e8,
+    #fff5c8,
+    #ffd5e8,
+    #e8d5ff
+  );
+  background-size: 300% 300%;
+  animation: holoFlow 3s ease infinite;
+  box-shadow: 0 28px 60px rgba(26, 23, 20, 0.4);
 }
 
 /* 실제 이미지 박스 — 카드 폭에 맞춰 16:9로 자르기 */
-.h-img{
-  width:100%;
-  aspect-ratio:16/9;
-  overflow:hidden;
-  border-radius:2px;
-  position:relative;
+.h-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 2px;
+  position: relative;
 }
-.h-img img{
-  width:100%;height:100%;
-  display:block;object-fit:cover;
-  transition:transform .6s ease;
+.h-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
-.h-card:hover .h-img img{transform:scale(1.03);}
+.h-card:hover .h-img img {
+  transform: scale(1.03);
+}
 
-.h-cap{position:relative;z-index:2;padding:.85rem 0;opacity:.6;transition:opacity .3s ease;}
-.h-card:hover .h-cap{opacity:1;}
-.hc-no{font-size:.5rem;letter-spacing:.25em;text-transform:uppercase;color:var(--ink2);opacity:.5;margin-bottom:.22rem;}
-.hc-title{font-family:'Cormorant Garamond',serif;font-size:.98rem;font-weight:400;color:var(--ink);}
-.hc-sub{font-size:.6rem;color:var(--ink2);margin-top:.12rem;letter-spacing:.04em;}
+/* ── 이미지 hover 오버레이 — 어두워지며 프로세스/작업물 버튼 노출 ── */
+.h-img-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(26, 23, 20, 0.55);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.h-card:hover .h-img-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+.h-ov-btn {
+  padding: 0.6rem 1.3rem;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+.h-ov-btn:hover {
+  background: #fff;
+  color: var(--ink);
+}
+
+.h-cap {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem 0 2.5rem 0;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+.h-card:hover .h-cap,
+.h-card.lit .h-cap {
+  opacity: 1;
+}
+.hc-no {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a88bd8;
+  margin-bottom: 1rem;
+}
+.hc-title {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+.hc-period {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+   margin-bottom: 1rem;
+}
+.hc-type-tools{
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.hc-type {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--ink2);
+  margin: 1rem 0;
+}
+.hc-tools {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--ink2);
+  letter-spacing: 0.04em;
+}
+.hc-tools span{
+  padding: 0.3rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
+}
+

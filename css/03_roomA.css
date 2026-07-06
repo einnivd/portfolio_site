@@ -29,9 +29,8 @@
   margin-bottom: 0.35rem;
 }
 .ra-name {
-  font-family: "Cormorant Garamond", serif;
   font-size: clamp(1.6rem, 2.5vw, 2.3rem);
-  font-weight: 300;
+  font-weight: 500;
   color: var(--ink);
 }
 .ra-desc {
@@ -50,9 +49,8 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  /* padding: 6vh 2.5rem 8vh; */
   margin: 15vh 0;
-  gap: 2.5rem;
+  gap: 10rem;
   background: var(--bg);
 }
 /* 두 번째 작업물만 좌우 반전 — 캡션이 왼쪽, 이미지가 오른쪽 */
@@ -64,22 +62,17 @@
 .v-artwork-wrap {
   position: relative;
   z-index: 2;
-  /* 화면 높이의 80% 기준으로 크기를 정하고, v-img가 16:9 비율을 유지하며
-     너비를 자동 계산하도록 flex-grow 대신 고정 크기로 전환 */
   flex: 0 0 auto;
   transition:
     transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.6s ease;
   transform: translateY(0);
-  /* 평소엔 그림자 없음. hover 시에만 뜨는 효과로 남김 */
 }
-/* 홀로그램 외곽선 — 평소엔 hidden */
 .v-artwork-wrap::before {
   content: "";
   position: absolute;
   inset: -10px;
   border-radius: 4px;
-  /* 평소엔 은은한 회색 테두리, hover 시 홀로그램 그라데이션으로 전환 */
   background: rgba(26, 23, 20, 0.5);
   transition: background 0.4s ease;
   z-index: -1;
@@ -104,14 +97,15 @@
     0 12px 32px rgba(26, 23, 20, 0.28);
 }
 .v-img {
-  width: 60wh;
-  aspect-ratio: 16/9; /* 비율 유지 — 높이가 정해지면 너비는 자동 계산됨 */
+  height: 60vh; /* 작품이 화면 높이의 80% */
+  width: auto;
+  aspect-ratio: 16/9;
   overflow: hidden;
   position: relative;
 }
-.v-img img{
+.v-img img {
   width: 100%;
-  height: 100%; /* 이게 빠져있으면 이미지 원본 비율대로 높이가 줄어들어서 컨테이너를 다 못 채움 */
+  height: 100%;
   display: block;
   object-fit: cover;
   transition: transform 0.6s ease;
@@ -121,15 +115,50 @@
   transform: scale(1.02);
 }
 
+/* ── 이미지 hover 오버레이 — 어두워지며 프로세스/작업물 버튼 노출 ── */
+.v-img-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(26, 23, 20, 0.55);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none; /* 평소엔 클릭 방해 안 하도록, hover 시에만 auto로 전환 */
+}
+.v-artwork-wrap:hover .v-img-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+.v-ov-btn {
+  padding: 0.65rem 1.5rem;
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+.v-ov-btn:hover {
+  background: #fff;
+  color: var(--ink);
+}
 /* 캡션 — 아크릴 액자 */
 .v-cap {
   position: relative;
   z-index: 3;
-  /* 작품 크기(80vh 기준)와 같은 비율(270:960)로 스케일 — 두 요소 사이의
-     비율이 화면 크기와 무관하게 항상 유지되도록 vh 단위 사용 */
-  flex: 0 40vh 40vh;
-  /* 유리 패널 */
-  padding: 1.9rem 2rem;
+  flex: 0 0 40vh;
+  padding: 2.5rem 2.5rem;
+  height: 40vh;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(14px);
@@ -157,10 +186,10 @@
 .v-cap-screw-bl,
 .v-cap-screw-br {
   position: absolute;
-  width: 11px;
-  height: 11px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #fff, #cfcfcf 55%, #8b8b8b);
+  background: radial-gradient(circle at 30% 30%, #fff, #cfcfcf 55%, #333);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
   z-index: 2;
 }
@@ -182,37 +211,52 @@
 }
 
 .vc-no {
-  font-size: 0.62rem;
-  letter-spacing: 0.3em;
+    font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(26, 23, 20, 0.45);
-  margin-bottom: 0.6rem;
+  color: #a88bd8;
+  margin-bottom: 1rem;
 }
 .vc-title {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 1.7rem;
+  font-weight: 500;
   color: var(--ink);
   line-height: 1.15;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+.vc-period {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  margin-bottom: 1rem;
 }
 .vc-type {
-  font-size: 0.68rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   color: var(--ink2);
-  margin-bottom: 0.6rem;
+  margin-top: 1.5rem;
+}
+.vc-project {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  color: var(--ink2);
 }
 .vc-divider {
   height: 1px;
   background: var(--rule);
-  margin-bottom: 0.6rem;
+  margin-bottom: 1rem;
 }
 .vc-tools {
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--ink2);
-  line-height: 1.8;
-  margin-bottom: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  letter-spacing: 0.04em;
 }
 .vc-btns {
   display: flex;
@@ -232,14 +276,13 @@
   text-decoration: none;
   transition: background 0.2s;
   backdrop-filter: blur(4px);
-  isolation: isolate; /* z-index 컨텍스트 분리 */
+  isolation: isolate;
 }
-/* 홀로그램 테두리 — 부모와 정확히 같은 radius로 감싸는 래퍼 */
 .vc-btn::before {
   content: "";
   position: absolute;
-  inset: -1.5px; /* border 두께만큼만 바깥으로 */
-  border-radius: 7.5px; /* 6px + 1.5px */
+  inset: -1.5px;
+  border-radius: 7.5px;
   background: linear-gradient(
     135deg,
     #e8d5ff,

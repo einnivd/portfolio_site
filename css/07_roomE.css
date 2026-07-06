@@ -1,0 +1,115 @@
+/* ════════════════════════════════════
+   06-room-e.css — Room E (카드뉴스) · 슬라이더, 홀로그램 외곽선 hover
+   ════════════════════════════════════ */
+.room-e {
+  background: var(--paper);
+  padding: 5rem 0;
+}
+.room-e-hdr {
+  padding: 0 2.5rem 3rem;
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+}
+.re-info {
+  flex: 1;
+}
+.re-tag {
+  font-size: 0.52rem;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--ink2);
+  opacity: 0.4;
+  margin-bottom: 0.35rem;
+}
+.re-name {
+  font-size: clamp(1.6rem, 2.5vw, 2.3rem);
+  font-weight: 500;
+  color: var(--ink);
+}
+.re-desc {
+  font-size: 0.65rem;
+  color: var(--ink2);
+  margin-top: 0.3rem;
+}
+
+.cn-slider-wrap {
+  overflow: hidden;
+  padding: 3rem 5rem 4rem;
+  position: relative;
+}
+.cn-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  will-change: transform;
+}
+.cn-card {
+  cursor: pointer;
+  flex: 0 0 440px;
+  position: relative;
+}
+.cn-img {
+  width: 440px;
+  height: 440px;
+  position: relative;
+  border-radius: 4px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+  transition:
+    background 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cn-card:hover .cn-img {
+  transform: translateY(-8px);
+  background: linear-gradient(
+    135deg,
+    #e8d5ff,
+    #c8e8ff,
+    #c8f5e8,
+    #fff5c8,
+    #ffd5e8,
+    #e8d5ff
+  );
+  background-size: 300% 300%;
+  animation: holoFlow 3s ease infinite;
+  box-shadow: 0 28px 60px rgba(26, 23, 20, 0.4);
+}
+.cn-img-inner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.cn-img-inner img {
+  transition: transform 0.6s ease;
+}
+.cn-card:hover .cn-img-inner img {
+  transform: scale(1.04);
+}
+.cn-img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.cn-meta {
+  padding: 0.7rem 0;
+}
+.cn-no {
+  font-family: 'Pretendard';
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a88bd8;
+  margin-bottom: 0.5rem;
+}
+.cn-title {
+  font-family: 'Pretendard';
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--ink);
+}
