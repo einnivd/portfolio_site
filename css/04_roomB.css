@@ -177,3 +177,37 @@
   background: rgba(255, 255, 255, 0.5);
 }
 
+/* 반응형 */
+@media (max-width: 1024px) {
+  .room-b {
+    padding: 3.5rem 0;
+  }
+  .room-b-hdr {
+    padding: 0 1.8rem 2rem;
+    gap: 1.5rem;
+  }
+  .h-track {
+    grid-template-columns: 1fr; /* 2열 → 1열, 태블릿부터 적용 */
+    gap: 2.5rem;
+    padding: 2rem 1.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .room-b-hdr {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .h-track {
+    padding: 1.5rem 1.2rem;
+  }
+  .hc-title {
+    font-size: 1.4rem;
+  }
+  .hc-type-tools {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+}
+

@@ -81,9 +81,9 @@
 }
 .mag-grid {
   display: grid;
-  grid-template-columns: 1fr 1.1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr) minmax(0, 1fr);
   gap: 3.5rem;
-  margin-bottom: 2rem; /* 4rem → 2rem */
+  margin-bottom: 2rem;
 }
 .mag-col-l {
   display: flex;
@@ -179,11 +179,15 @@
   letter-spacing: 0.05em;
   color: var(--ink);
 }
-
+.mag-info-v,
+.mag-contents {
+  word-break: keep-all; /* 한글 단어 단위로 자연스럽게 줄바꿈 */
+  overflow-wrap: break-word;
+}
 /* 하단 3열: Experience / Skills / Education */
 .mag-bottom {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 3.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--rule);
@@ -216,7 +220,7 @@
   opacity: 0.9;
   padding: 3px 0;
 }
-.skill-category{
+.skill-category {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -224,7 +228,7 @@
 .mag-skill-group {
   margin-bottom: 0.7rem; /* 1.2rem → 0.7rem */
 }
-.skills-label{
+.skills-label {
   padding: 2px 0; /* 5px → 2px */
 }
 .mag-chips {
@@ -253,4 +257,82 @@
 .mag-scroll-hint span {
   display: block;
   margin-top: 0.3rem;
+}
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  .about-spacer {
+    display: none; /* fixed 고정용 정지 구간 더 이상 불필요 */
+  }
+
+  .about-mag {
+    position: relative !important; /* fixed 해제 */
+    opacity: 1 !important; /* JS opacity 무시 */
+    transform: none !important; /* JS translateY 무시 */
+    pointer-events: auto !important;
+    height: auto;
+    min-height: 100vh;
+    margin-top: -40vh; /* Hero 쪽으로 끌어올려 겹치게 시작 */
+    padding: 4rem 1.8rem 3rem;
+    border-radius: 28px 28px 0 0; /* 덮이는 느낌을 살리는 곡선 처리(선택) */
+    box-shadow: 0 -24px 60px rgba(26, 23, 20, 0.18);
+    z-index: 5;
+  }
+  .mag-rail {
+    display: none;
+  }
+  .mag-grid {
+    grid-template-columns: 1fr 1fr; /* 3열 → 2열 */
+    gap: 2rem;
+  }
+  .mag-col-c {
+    grid-column: 1 / -1; /* 사진을 2열 전체 폭으로 */
+    justify-content: flex-start;
+  }
+  .mag-photo-frame {
+    width: 32%;
+  }
+  .mag-bottom {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+@media (max-width: 1600px) {
+  .mag-rail {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .inner {
+    gap: 1.5rem;
+  }
+  .mag-grid {
+    grid-template-columns: 1fr; /* 1열 */
+  }
+  .mag-photo-frame {
+    width: 55%;
+    margin: 0 auto;
+  }
+  .mag-bottom {
+    grid-template-columns: 1fr; /* 1열 */
+    gap: 2rem;
+  }
+  .mag-title {
+    font-size: clamp(2.2rem, 8vw, 2.8rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-mag {
+    padding: 3.5rem 1.2rem 2rem;
+  }
+  .mag-eye {
+    font-size: 1.4rem;
+  }
+  .mag-info-v {
+    font-size: 1rem;
+  }
+  .mag-photo-frame {
+    width: 70%;
+  }
 }

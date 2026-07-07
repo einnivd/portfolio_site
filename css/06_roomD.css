@@ -220,3 +220,62 @@ font-size: 1rem;
   margin-bottom: 2rem;
   letter-spacing: 0.04em;
 }
+
+/* 반응형 */
+
+/* 세로가 긴 화면에서도 과도하게 안 넓어지게 안전장치 */
+.rd-img {
+  max-width: 55vw;
+}
+
+@media (max-width: 1200px) {
+  .room-d-hdr {
+    padding: 2.5rem 1.8rem 1.8rem;
+    gap: 1.5rem;
+  }
+  .rd-item,
+  .rd-item:nth-of-type(2) {
+    flex-direction: column; /* 세로 스택으로 통일 */
+    align-items: center;
+    gap: 2rem;
+    margin: 6rem 0;
+    min-height: 0;
+  }
+  .rd-img {
+    height: auto;
+    width: 100%;
+    max-width: 600px;
+  }
+  .rd-cap {
+    max-width: 600px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .room-d-hdr {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .rd-item {
+    margin: 4rem 0;
+  }
+  .rd-title {
+    font-size: 1.4rem;
+  }
+  .rd-tools,
+  .rd-project,
+  .rd-type {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .room-d-hdr {
+    padding: 2rem 1.2rem 1.2rem;
+  }
+  .rd-cap {
+    padding: 1.4rem;
+  }
+}

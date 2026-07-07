@@ -33,23 +33,37 @@
     <link rel="stylesheet" href="css/08_ai.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <!-- <link rel="stylesheet" href="css/cursor-particles.css" /> -->
 
-    <link rel="stylesheet" href="css/cursor-particles.css" />
     <script src="js/main.js" defer></script>
     <script src="js/01_hero.js" defer></script>
     <script src="js/03_roomA.js" defer></script>
     <script src="js/04_roomB.js" defer></script>
     <script src="js/05_roomC.js" defer></script>
-    <!-- <script src="js/06_roomD.js" defer></script> -->
     <script src="js/07_roomE.js" defer></script>
-    <script src="js/cursor-particles.js" defer></script>
+    <!-- <script src="js/cursor-particles.js" defer></script> -->
   </head>
   <body>
     <!-- 히어로 섹션  -->
     <nav id="nav">
-      <a href="#hero-wrap" class="nav-left" id="nav-logo"
-        >YEBIN PORTFOLIO GALLERY</a
+      <div class="head-logo">
+        <div id="head-logo">
+          <a href="#hero-wrap" class="nav-left" id="nav-logo">
+            <img src="images/head_logo.ico" alt="로고" />
+          </a>
+        </div>
+      </div>
+
+      <!-- 추가: 햄버거 버튼 (반응형)-->
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-label="메뉴 열기"
+        aria-expanded="false"
       >
+        <span></span><span></span><span></span>
+      </button>
+
       <ul class="nav-menu" id="nav-menu">
         <li><a href="#about">About Me</a></li>
         <li><a href="#room-a">Web Design &amp; Coding</a></li>
@@ -57,6 +71,7 @@
         <li><a href="#room-c">Design</a></li>
         <li><a href="#room-d">Branding</a></li>
         <li><a href="#room-e">Card News</a></li>
+        <li><a href="#ai">Ai workflow</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -241,7 +256,6 @@
             <div class="ra-info">
               <div class="ra-name holo-title">WEB DESIGN &amp; CODING</div>
             </div>
-            
           </div>
           <div class="v-stack">
             <div class="v-item">
@@ -300,7 +314,7 @@
                       >프로세스</a
                     >
                     <a
-                      href="https://hairplus-clone-coding.vercel.app/"
+                      href="https://sneakers-unboxed-landing-page-21e1.vercel.app/"
                       class="v-ov-btn"
                       target="_blank"
                       rel="noopener"
@@ -370,7 +384,7 @@
         <div class="room-b" id="room-b">
           <div class="room-b-hdr reveal">
             <div class="room-badge-acrylic">
-               <div class="rb-screw-tl"></div>
+              <div class="rb-screw-tl"></div>
               <div class="rb-screw-tr"></div>
               <div class="rb-screw-bl"></div>
               <div class="rb-screw-br"></div>
@@ -379,7 +393,6 @@
             <div class="rb-info">
               <div class="rb-name holo-title">CLONE CODING</div>
             </div>
-           
           </div>
           <div class="h-track">
             <div class="h-card">
@@ -506,7 +519,7 @@
         <div class="room-c" id="room-c">
           <div class="room-c-hdr reveal hdr-right">
             <div class="room-badge-acrylic">
-               <div class="rb-screw-tl"></div>
+              <div class="rb-screw-tl"></div>
               <div class="rb-screw-tr"></div>
               <div class="rb-screw-bl"></div>
               <div class="rb-screw-br"></div>
@@ -515,7 +528,6 @@
             <div class="rc-info">
               <div class="rc-name holo-title">DESIGN</div>
             </div>
-           
           </div>
 
           <!-- 앱 디자인 -->
@@ -546,17 +558,23 @@
               <div class="adb-no">C — 01 · Detail</div>
               <div class="adb-divider"></div>
               <p class="adb-desc">
-                사용자 리서치부터 와이어프레임, 고충실도 프로토타입까지<br />전
-                과정을 직접 설계했습니다.<br /><br />직관적인 내비게이션과
-                일관된 인터랙션 패턴으로 사용성을 개선했습니다.
+                사용자 리서치를 바탕으로 공연 탐색부터 예매까지의 경험을
+                재설계했습니다.<br />
+                흩어진 공연 정보를 한곳에서 쉽고 빠르게 확인할 수 있도록<br />
+                정보 구조와 화면 흐름을 개선했습니다.<br />
+
+                직관적인 내비게이션과 일관된 인터랙션을 적용해 탐색 부담을
+                줄이고,<br />
+                사용자가 원하는 공연을 자연스럽게 발견하고 예매까지 이어질 수
+                있는 경험을<br> 구현했습니다.
               </p>
               <div class="ac-btns">
                 <a
-                  href="https://www.figma.com/design/7ztDszKvCeKtD728LtXM90/%EC%A0%9C%EB%AA%A9-%EC%97%86%EC%9D%8C?node-id=0-1&t=J7QLUUcWQT5gvBrD-1"
+                  href="https://www.figma.com/design/7ztDszKvCeKtD728LtXM90/%EC%A0%9C%EB%AA%A9-%EC%97%86%EC%9D%8C?node-id=252-1978&t=VYouCwScyzbgaMKa-1"
                   class="ac-btn"
                   >프로세스</a
                 ><a
-                  href="https://www.figma.com/proto/7ztDszKvCeKtD728LtXM90/%EC%A0%9C%EB%AA%A9-%EC%97%86%EC%9D%8C?node-id=162-485&t=wfG1KAjtw64TcCgn-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1"
+                  href="https://www.figma.com/proto/7ztDszKvCeKtD728LtXM90/%EC%A0%9C%EB%AA%A9-%EC%97%86%EC%9D%8C?node-id=252-651&p=f&t=Xx0x2GPVYMcSrb5Y-1&scaling=min-zoom&content-scaling=fixed&page-id=252%3A526&starting-point-node-id=252%3A651"
                   class="ac-btn f"
                   >작업물</a
                 >
@@ -624,20 +642,23 @@
                 <div class="modal-body">
                   <div class="modal-no">C — 02</div>
                   <div class="modal-title">오니스트 트리플 콜라겐</div>
-                  <div class="modal-type">상세 페이지 리디자인 · Photoshop</div>
+                  <div class="modal-type">상세 페이지 리디자인</div>
                   <div class="modal-divider"></div>
+                  <div class="modal-tools" id="modal-tools">
+                    <span class="modal-tool-chip">Photoshop</span>
+                    <span class="modal-tool-chip">ChatGPT</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-       
         <!-- room D -->
         <div class="room-d" id="room-d">
           <div class="room-d-hdr reveal">
             <div class="room-badge-acrylic">
-               <div class="rb-screw-tl"></div>
+              <div class="rb-screw-tl"></div>
               <div class="rb-screw-tr"></div>
               <div class="rb-screw-bl"></div>
               <div class="rb-screw-br"></div>
@@ -646,7 +667,6 @@
             <div class="rd-info">
               <div class="rd-name holo-title">BRANDING</div>
             </div>
-            
           </div>
 
           <div class="rd-stack">
@@ -728,7 +748,7 @@
         <div class="room-e" id="room-e">
           <div class="room-e-hdr reveal hdr-right">
             <div class="room-badge-acrylic">
-               <div class="rb-screw-tl"></div>
+              <div class="rb-screw-tl"></div>
               <div class="rb-screw-tr"></div>
               <div class="rb-screw-bl"></div>
               <div class="rb-screw-br"></div>
@@ -737,7 +757,6 @@
             <div class="re-info">
               <div class="re-name holo-title">CARD NEWS</div>
             </div>
-           
           </div>
           <div class="cn-slider-wrap" id="cn-slider-wrap">
             <div class="cn-track" id="cn-track">
@@ -1123,7 +1142,7 @@
                   Card News · Visual Design
                 </div>
                 <div class="modal-divider"></div>
-                <div class="modal-tools" id="modal-tools">
+                <div class="modal-tools" id="cn-modal-tools">
                   <span class="modal-tool-chip"></span>
                 </div>
               </div>

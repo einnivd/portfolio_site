@@ -39,7 +39,7 @@
   align-items: flex-end;
   justify-content: center;
   margin: 15vh 0;
-  gap: 10rem;
+  gap: clamp(1.5rem, 4vw, 10rem); /* 화면이 좁아질수록 gap이 자동으로 줄어듦 */
   background: var(--bg);
 }
 /* 두 번째 작업물만 좌우 반전 — 캡션이 왼쪽, 이미지가 오른쪽 */
@@ -295,4 +295,67 @@
 }
 .vc-btn.f:hover {
   background: #333;
+}
+/* v-img 자체에 안전장치 — 세로가 긴 화면에서도 과도하게 안 넓어지게 */
+.v-img {
+  max-width: 55vw;
+}
+
+/* 반응형 */
+@media (max-width: 1200px) {
+  .room-a-hdr {
+    padding: 2.5rem 1.8rem 1.8rem;
+    gap: 1.5rem;
+  }
+  .v-item,
+  .v-item:nth-of-type(2) {
+    flex-direction: column; /* 세로 스택으로 통일 */
+    align-items: center;
+    gap: 2rem;
+    margin: 6rem 0;
+    min-height: 0;
+  }
+  .v-img {
+    height: auto;
+    width: 100%;
+    max-width: 600px;
+  }
+  .v-cap {
+    flex: none;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    padding: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .room-a-hdr {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .v-item {
+    margin: 4rem 0;
+  }
+  .vc-title {
+    font-size: 1.4rem;
+  }
+  .vc-tools,
+  .vc-project,
+  .vc-type {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .room-a-hdr {
+    padding: 2rem 1.2rem 1.2rem;
+  }
+  .v-cap {
+    padding: 1.4rem;
+  }
+  .vc-title {
+    font-size: 1.2rem;
+  }
 }

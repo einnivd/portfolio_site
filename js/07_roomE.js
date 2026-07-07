@@ -110,7 +110,7 @@ const modalData = [
     title: "GYM UTO 포스터",
     year: "2026",
     img: "images/fitness.jpg",
-    tools: ["Photoshop", "ChatGPT"],
+    tools: ["Photoshop",],
   },
   {
     no: "E — 03",
@@ -124,42 +124,42 @@ const modalData = [
     title: "알로에 스킨토너 광고",
     year: "2026",
     img: "images/aloe.jpg",
-    tools: ["Photoshop", "ChatGPT"],
+    tools: ["Photoshop", "illustrator"],
   },
   {
     no: "E — 05",
     title: "히비스커스 에이드 웹 포스터",
     year: "2026",
     img: "images/hibiscus_ade.jpg",
-    tools: ["Photoshop", "ChatGPT"],
+    tools: ["Photoshop",],
   },
   {
     no: "E — 06",
     title: "수영복 할인 배너",
     year: "2026",
     img: "images/life_item.jpg",
-    tools: ["Photoshop", "ChatGPT"],
+    tools: ["Photoshop",],
   },
   {
     no: "E — 07",
     title: "반려견 굿즈 만들기 SNS 광고",
     year: "2026",
     img: "images/pet.jpg",
-    tools: ["Photoshop", "ChatGPT"],
+    tools: ["Photoshop",],
   },
   {
     no: "E — 08",
     title: "베이글 카페 포스터",
     year: "2026",
     img: "images/bagel.jpg",
-    tools: ["Photoshop", "ChatGPT"],
+    tools: ["Photoshop",],
   },
   {
     no: "E — 09",
     title: "리뷰 이벤트 광고",
     year: "2026",
     img: "images/review.jpg",
-    tools: ["Photoshop", "ChatGPT"],
+    tools: ["Photoshop",],
   },
 ];
 
@@ -170,7 +170,7 @@ function openModal(idx) {
   document.getElementById("modal-type").textContent =
     d.year + " · Card News · Visual Design";
 
-  const toolsEl = document.getElementById("modal-tools");
+  const toolsEl = document.getElementById("cn-modal-tools");
   toolsEl.innerHTML = "";
   (d.tools || []).forEach((tool) => {
     const chip = document.createElement("span");

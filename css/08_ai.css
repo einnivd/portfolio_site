@@ -190,3 +190,57 @@
   margin-top: 0.8rem;
   text-align: left;
 }
+
+/* 반응형 */
+@media (max-width: 1200px) {
+  .ai-tools {
+    grid-template-columns: repeat(3, 1fr); /* 태블릿: 1줄에 3개 */
+  }
+  .ai-results {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .ai-mag {
+    padding: 4.5rem 1.8rem 5rem;
+  }
+  .ai-inner {
+    gap: 0;
+  }
+  .mag-rail {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-tools {
+    grid-template-columns: repeat(2, 1fr); /* 모바일: 1줄에 2개 */
+    gap: 1rem;
+  }
+  .ai-results {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+  .ai-title {
+    font-size: clamp(2.2rem, 8vw, 2.8rem);
+  }
+  .ai-philosophy {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-mag {
+    padding: 3.5rem 1.2rem 4rem;
+  }
+  .ai-tool-card {
+    padding: 1.3rem 1.1rem;
+  }
+  .ai-section-no {
+    font-size: 2rem;
+  }
+  .ai-section-title {
+    font-size: 1.3rem;
+  }
+}

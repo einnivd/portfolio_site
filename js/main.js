@@ -155,3 +155,22 @@ document.querySelectorAll('a[href^="#"]:not([href="#"]):not([href="#about"])').f
     smoothScrollTo(targetY, 1200);
   });
 });
+
+// 상단 메뉴 햄버거 버튼(반응형)
+const navToggle = document.getElementById('nav-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+navToggle.addEventListener('click', () => {
+  const isOpen = navMenu.classList.toggle('open');
+  navToggle.classList.toggle('open', isOpen);
+  navToggle.setAttribute('aria-expanded', isOpen);
+});
+
+// 메뉴 항목 클릭 시 자동으로 닫기
+navMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', false);
+  });
+});

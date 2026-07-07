@@ -131,60 +131,30 @@ footer {
 }
 
 /* ── 반응형 — 모든 섹션 공통, 가장 마지막에 로드되어야 함 ── */
-@media (max-width: 900px) {
-  nav {
-    padding: 1rem 1.5rem;
-  }
-  .arch-wrap {
-    width: 85vw;
-  }
-  .about-header {
-    padding: 4rem 1.5rem 2.5rem;
-    flex-wrap: wrap;
-  }
-  .ah-big {
-    display: none;
-  }
-  .room-a-hdr,
-  .room-b-hdr,
-  .room-c-hdr,
-  .room-d-hdr {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  .v-item,
-  .app-showcase {
-    padding: 4vh 1.5rem;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .v-cap,
-  .app-cap {
-    flex: none !important;
-    width: 100%;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  .h-track {
-    padding: 0 1.5rem;
-    overflow-x: auto;
-  }
-  .h-card {
-    flex: 0 0 80%;
-  }
-  .cn-slider-wrap {
-    padding: 0 1.5rem;
-  }
-  .cn-card {
-    flex: 0 0 80%;
-  }
+@media (max-width: 1024px) {
   .last {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 2열 → 1열 */
     gap: 3rem;
-    padding: 5rem 1.5rem;
+    padding: 6rem 1.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .last {
+    padding: 4.5rem 1.2rem;
+  }
+  .last-title {
+    font-size: clamp(2.4rem, 9vw, 3rem);
+  }
+  .last-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  .ext-val {
+    font-size: 1.05rem;
   }
   footer {
-    padding: 1.5rem;
+    padding: 1.5rem 1.2rem;
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;

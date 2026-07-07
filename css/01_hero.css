@@ -200,12 +200,16 @@
 
 /* 코너 */
 .hero-corner {
-  position: absolute;
+ position: absolute;
   z-index: 5;
-  font-size: 2rem;
-  letter-spacing: 0.2em;
+  font-size: clamp(0.75rem, 1.7vw, 2rem); /* 뷰포트 폭에 비례해서 자동으로 줄어듦 */
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: rgba(26, 23, 20, 0.25);
+  max-width: 42%;         /* 좌우 각각 화면의 42%까지만 차지하게 제한 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 그래도 넘치면 …으로 자연스럽게 잘림 */
 }
 .hero-corner.tl {
   top: 1.8rem;
@@ -421,4 +425,36 @@
   padding-bottom: 0.3rem;
   cursor: pointer;
   text-decoration: none;
+}
+
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  /* Hero: 순수 1화면(100vh) + About이 덮으며 올라올 여유 구간(40vh) */
+  .hero-wrap {
+    height: 140vh;
+  }
+
+  /* JS가 넣는 zoom/opacity 값 전부 무시 — 모바일에선 항상 정적인 상태 유지 */
+  #hero-zoom-wrap {
+    transform: none !important;
+  }
+  .arch-content {
+    opacity: 1 !important;
+  }
+  #hero-sticky {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* 사이드/코너 텍스트는 기존에 드린 대로 계속 숨김 처리 */
+  .hero-side-l,
+  .hero-side-r {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .hero-corner {
+    display: none; /* 900px 이하에서 코너 텍스트 완전히 숨김 */
+  }
 }

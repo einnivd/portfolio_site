@@ -41,6 +41,7 @@
 .cn-card {
   cursor: pointer;
   flex: 0 0 440px;
+  min-width: 0;
   position: relative;
 }
 .cn-img {
@@ -106,4 +107,47 @@
   font-size: 1.4rem;
   font-weight: 500;
   color: var(--ink);
+}
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  .room-e {
+    padding: 3.5rem 0;
+  }
+  .room-e-hdr {
+    padding: 0 1.8rem 2rem;
+    gap: 1.5rem;
+  }
+  .cn-slider-wrap {
+    padding: 2rem 2.5rem 3rem;
+  }
+  .cn-card {
+     flex: 0 0 320px;
+    min-width: 0;
+  }
+  .cn-img {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  .room-e-hdr {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cn-slider-wrap {
+    padding: 1.5rem 1.2rem 2.5rem;
+  }
+  .cn-card {
+    flex: 0 0 240px;
+    min-width: 0;
+  }
+  .cn-img {
+    width: 240px;
+    height: 240px;
+  }
+  .cn-title {
+    font-size: 1.1rem;
+  }
 }

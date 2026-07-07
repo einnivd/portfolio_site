@@ -140,6 +140,20 @@ nav.scrolled {
   letter-spacing: 0.25em;
   color: rgba(26, 23, 20, 0.5);
 }
+.head-logo{
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+}
+#head-logo{
+  width: 100%;
+  height: auto;
+}
+#head-logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .nav-menu {
   position: relative; 
   z-index: 2;
@@ -266,22 +280,20 @@ nav.scrolled {
   padding: 2rem 2.2rem 2.5rem;
 }
 .modal-no {
-  font-size: 0.55rem;
+  font-size: 1.2rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--ink2);
-  opacity: 0.4;
+  color: #a88db8;
   margin-bottom: 0.5rem;
 }
 .modal-title {
-  font-family: "Cormorant Garamond", serif;
   font-size: 1.6rem;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--ink);
   margin-bottom: 0.3rem;
 }
 .modal-type {
-  font-size: 0.65rem;
+  font-size: 1rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--ink2);
@@ -304,7 +316,7 @@ nav.scrolled {
   margin-top: 0.8rem;
 }
 .modal-tool-chip {
-  font-size: 0.7rem;
+  font-size: 1rem;
   padding: 0.35rem 0.9rem;
   border: 1px solid var(--rule);
   border-radius: 20px;
@@ -453,4 +465,75 @@ nav.scrolled {
 /* 작업물 개수 표시(span)는 맨 앞으로 보내서 왼쪽 여백 쪽에 배치 */
 .hdr-right > span {
   order: 0;
+}
+
+/* ── 햄버거 버튼 (기본: 숨김) ── */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 210;
+}
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--ink);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── 태블릿 + 모바일 공통 ── */
+@media (max-width: 1024px) {
+  nav {
+    padding: 1.2rem 1.5rem;
+  }
+  .nav-toggle {
+    display: flex;
+  }
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(320px, 80vw);
+    background: rgba(248, 246, 242, 0.98);
+    backdrop-filter: blur(16px);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.6rem;
+    padding: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    box-shadow: -8px 0 30px rgba(26, 23, 20, 0.1);
+  }
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+  .nav-menu a {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .head-logo img,
+  #head-logo img {
+    height: 32px; /* 모바일에서 로고 살짝 축소 */
+  }
 }

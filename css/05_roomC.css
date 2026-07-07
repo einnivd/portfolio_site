@@ -15,7 +15,7 @@
   border-bottom: 1px solid var(--rule);
   display: flex;
   align-items: flex-end;
-   gap: 3rem;
+  gap: 3rem;
 }
 .rc-info {
   flex: 1;
@@ -152,7 +152,7 @@
   font-weight: 500;
   letter-spacing: 0.1em;
   color: var(--ink2);
- margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 .ac-project {
   font-size: 1rem;
@@ -314,14 +314,14 @@
   margin-bottom: 1rem;
 }
 .rc-type {
-   font-size: 1rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   color: var(--ink2);
   margin-top: 1.5rem;
 }
 .rc-project {
-    font-size: 1rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   margin-bottom: 1.5rem;
@@ -421,4 +421,88 @@
 .rc-ov-btn:hover {
   background: #fff;
   color: var(--ink);
+}
+
+/* 반응형 */
+@media (max-width: 1300px) {
+  .room-c-hdr {
+    padding: 2.5rem 1.8rem 1.8rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .app-showcase {
+    flex-direction: column;
+    min-height: auto;
+    padding: 4rem 1.8rem;
+    gap: 3rem;
+  }
+  .app-phone-group {
+    flex-direction: column;
+    gap: 2rem;
+    transform: none !important;
+    width: 100%; /* 추가 — 폰 이미지 폭과 무관하게 부모 폭 확보 */
+    max-width: 500px; /* 추가 — 캡션과 동일한 최대 너비로 통일 */
+    align-items: center; /* 폰 이미지는 가운데 정렬 유지 */
+  }
+  .app-showcase.lit .app-phone-group {
+    transform: none !important;
+  }
+  .app-phone-img {
+    height: 60vh;
+    max-width: 100%;
+  }
+
+  /* 두 캡션(올티켓, 오니스트) 크기 완전히 통일 */
+  .app-cap,
+  .rc-cap {
+    height: auto;
+    width: 100%;
+    max-width: 500px;
+    padding: 2.5rem;
+  }
+
+  .app-detail-box {
+    max-width: 100%;
+    width: 100%;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+  .adb-desc {
+    white-space: normal;
+  }
+
+  .rc-showcase {
+    flex-direction: column;
+    margin-top: 0;
+    gap: 2.5rem;
+    padding: 4rem 1.8rem;
+  }
+  .rc-artwork-wrap {
+    order: 1;
+    width: 100%;
+    max-width: 500px;
+  }
+  .rc-cap {
+    order: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .room-c-hdr {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .app-phone-img {
+    height: 50vh;
+  }
+  .ac-title,
+  .rc-title {
+    font-size: 1.4rem;
+  }
+  .adb-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
 }
