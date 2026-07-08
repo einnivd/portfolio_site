@@ -151,7 +151,7 @@
   z-index: 3;
   flex: 0 0 40vh;
   padding: 2.5rem 2.5rem;
-  height: 40vh;
+  height: 45vh;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(14px);
@@ -242,6 +242,13 @@
   margin-top: 1.5rem;
 }
 .vc-project {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  color: var(--ink2);
+}
+.vc-page{
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.1em;

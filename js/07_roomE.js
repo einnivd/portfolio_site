@@ -204,20 +204,23 @@ function openModal(idx) {
   document.body.style.overflow = "hidden";
 }
 function closeModal(e) {
-  if (e.target === document.getElementById("cn-modal")) {
-    document.getElementById("cn-modal").classList.remove("open");
-    document.body.style.overflow = "";
+  const modal = document.getElementById("cn-modal");
+  if (!modal) return;
+
+  // 오버레이 배경(모달 바깥) 클릭이거나 닫기(✕) 버튼 클릭일 때만 닫는다.
+  // 모달 안쪽(이미지, 텍스트 등) 클릭은 무시한다.
+  if (e && e.target !== modal && !e.target.closest(".modal-close")) {
+    return;
   }
+
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
 }
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     document.getElementById("cn-modal").classList.remove("open");
     document.body.style.overflow = "";
   }
-});
-document.querySelector(".modal-close")?.addEventListener("click", () => {
-  document.getElementById("cn-modal").classList.remove("open");
-  document.body.style.overflow = "";
 });
 document.getElementById("cn-modal")?.addEventListener(
   "wheel",

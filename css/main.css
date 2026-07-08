@@ -2,36 +2,41 @@
    00-base.css — Reset, 변수, 폰트, 공통 애니메이션, 내비게이션
    ════════════════════════════════════ */
 @font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2') format('woff2');
-    font-weight: 100;
-    font-display: swap;
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Thin.woff2")
+    format("woff2");
+  font-weight: 100;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-display: swap;
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2")
+    format("woff2");
+  font-weight: 300;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-display: swap;
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-display: swap;
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2")
+    format("woff2");
+  font-weight: 500;
+  font-display: swap;
 }
 @font-face {
-    font-family: 'Pretendard';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-display: swap;
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-display: swap;
 }
-   *,
+*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -140,22 +145,22 @@ nav.scrolled {
   letter-spacing: 0.25em;
   color: rgba(26, 23, 20, 0.5);
 }
-.head-logo{
+.head-logo {
   display: flex;
   align-items: stretch;
   gap: 1rem;
 }
-#head-logo{
+#head-logo {
   width: 100%;
   height: auto;
 }
-#head-logo img{
+#head-logo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 .nav-menu {
-  position: relative; 
+  position: relative;
   z-index: 2;
   font-size: 0.8rem;
   letter-spacing: 0.15em;
@@ -263,7 +268,11 @@ nav.scrolled {
   padding: 2.5rem 1rem 1rem;
   border: none;
   cursor: pointer;
-  background: linear-gradient(180deg, transparent 0%, rgba(26, 23, 20, 0.75) 65%);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(26, 23, 20, 0.75) 65%
+  );
   color: #fff;
   font-size: 0.78rem;
   font-weight: 500;
@@ -274,7 +283,11 @@ nav.scrolled {
   height: auto; /* JS가 실제 이미지 높이로 인라인 style을 덮어씀 */
 }
 .modal-img-box.expanded .modal-img-expand {
-  background: linear-gradient(180deg, transparent 0%, rgba(26, 23, 20, 0.55) 100%);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(26, 23, 20, 0.55) 100%
+  );
 }
 .modal-body {
   padding: 2rem 2.2rem 2.5rem;
@@ -339,6 +352,7 @@ nav.scrolled {
   color: var(--ink);
   transition: background 0.2s;
   border-radius: 4px;
+  z-index: 5;
 }
 .modal-close:hover {
   background: rgba(26, 23, 20, 0.14);
@@ -394,13 +408,13 @@ nav.scrolled {
   bottom: 5px;
   right: 5px;
 }
-.rb-sm{
+.rb-sm {
   font-size: 1.5rem;
   font-weight: 600;
   text-transform: uppercase;
   color: #a88db8;
 }
-.rb-letter{
+.rb-letter {
   font-size: 5rem;
   font-weight: 600;
   color: #826e8d;
@@ -436,7 +450,6 @@ nav.scrolled {
 }
 
 /* room A C E 제목과 캡션 순서와 위치 변경 */
-
 
 /* ════════════════════════════════════
    room-hdr-zigzag.css — 헤더 지그재그 배치
@@ -485,7 +498,9 @@ nav.scrolled {
   width: 100%;
   height: 2px;
   background: var(--ink);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 .nav-toggle.open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
