@@ -37,18 +37,20 @@
 
 /* 홀로그램 외곽선 hover — 이미지 감싸는 래퍼에 적용 */
 .h-artwork-wrap {
-  position: relative;
+position: relative;
   border-radius: 4px;
   padding: 10px;
   background: rgba(26, 23, 20, 0.3);
-  transform: translateY(0);
+  opacity: 0;
+  transform: translateY(60px); /* 시작: 아래쪽에 위치 */
   transition:
+    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.7s ease,
     background 0.4s ease,
-    box-shadow 0.4s ease,
-    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow 0.4s ease;
 }
 .h-card:hover .h-artwork-wrap {
-  transform: translateY(-8px);
+  transform: translateY(-8px); /* 기존 hover 들뜨는 효과 유지 */
   background: linear-gradient(
     135deg,
     #e8d5ff,
@@ -128,6 +130,10 @@
 }
 .h-card:hover .h-cap,
 .h-card.lit .h-cap {
+  opacity: 1;
+}
+.h-card.lit .h-artwork-wrap {
+  transform: translateY(0); /* 스크롤 도달 시 제자리로 올라옴 */
   opacity: 1;
 }
 .hc-no {

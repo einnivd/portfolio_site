@@ -12,6 +12,7 @@ const litObsRoomC = new IntersectionObserver(entries => {
   rootMargin: '-12% 0px -12% 0px'
 });
 document.querySelectorAll('.app-showcase').forEach(el => litObsRoomC.observe(el));
+document.querySelectorAll('.rc-showcase').forEach(el => litObsRoomC.observe(el));
 
 /* ── 상세 페이지(오니스트 콜라겐) 모달 ── */
 const rcModalImages = [
