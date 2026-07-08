@@ -335,6 +335,19 @@
     margin: 6rem 0;
     min-height: 0;
   }
+  .v-stack {
+    /* Room B(.h-track)처럼 모바일에서 화면 양옆 여백이 생기도록 함.
+       room-a-hdr과 동일한 값(1.8rem)으로 통일 */
+    padding: 0 1.8rem;
+  }
+  .v-artwork-wrap {
+    /* align-items:center인 flex 컬럼에서는 자식이 자동으로 늘어나지 않아서
+       .v-img의 width:100%가 기준으로 삼을 너비가 없어짐 → 이미지가
+       원본 비율대로 찌그러져 작게 나오는 원인. 여기서 명시적으로 폭을 줘서
+       .v-img가 항상 16:9로 정상 크롭되게 함(Room B .h-img와 동일) */
+    width: 100%;
+    max-width: 600px;
+  }
   .v-img {
     height: auto;
     width: 100%;
@@ -371,6 +384,9 @@
 @media (max-width: 480px) {
   .room-a-hdr {
     padding: 2rem 1.2rem 1.2rem;
+  }
+  .v-stack {
+    padding: 0 1.2rem;
   }
   .v-cap {
     padding: 1.4rem;
