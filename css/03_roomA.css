@@ -377,7 +377,8 @@
   }
   .vc-tools,
   .vc-project,
-  .vc-type {
+  .vc-type,
+  .vc-page {
     font-size: 0.9rem;
   }
 }
