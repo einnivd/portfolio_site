@@ -149,6 +149,7 @@
 .v-cap {
   position: relative;
   z-index: 3;
+  box-sizing: border-box; /* width:100%에 padding까지 포함시켜 모바일에서 화면 밖으로 넘치는 것 방지 */
   flex: 0 0 40vh;
   padding: 2.5rem 2.5rem;
   height: 45vh;

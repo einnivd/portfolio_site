@@ -375,6 +375,7 @@
   justify-content: center;
   gap: 0.8rem;
   z-index: 2;
+  overflow: hidden; /* 안전장치 — 어떤 경우에도 텍스트가 문 밖으로 삐져나가지 않고 문 모양대로 잘리게 함 */
   /* JS로 opacity 제어 */
 }
 .arch-star {
@@ -396,6 +397,7 @@
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: rgba(26, 23, 20, 0.6);
+  text-align: center; /* 좁은 화면에서 2줄로 줄바꿈될 때도 가운데 정렬 유지 */
 }
 .arch-divider {
   width: 1px;
@@ -451,6 +453,36 @@
   .hero-side-l,
   .hero-side-r {
     display: none;
+  }
+
+  /* 문(arch-wrap)이 고정 500px라서, 모바일 실제 화면(주소창/하단바로
+     실제 보이는 높이가 100vh보다 줄어드는 기기)에서 문 상단이 화면
+     밖으로 잘려 보이던 문제 → 화면 폭/높이에 비례해 더 작게 축소 */
+  .arch-wrap {
+    width: min(70vw, 50vh, 320px);
+  }
+
+  /* 문이 작아지면서 태그라인 폰트가 상대적으로 커서 답답해 보이는 것 축소 */
+  .arch-tagline {
+    font-size: 1.3rem;
+  }
+
+  /* ENTER→ 버튼이 데스크톱 문 크기 기준의 top:2rem 오프셋 때문에
+     작아진 모바일 문 밖으로 밀려나던 것 → 오프셋을 줄여서 문 안에 유지 */
+  .arch-enter {
+    top: 0;
+  }
+
+  /* 문이 작아진 만큼 안쪽 콘텐츠 간격/크기도 함께 줄여서
+     작은 화면에서도 여유 있게 문 안에 다 들어오게 함 */
+  .arch-content {
+    gap: 0.5rem;
+  }
+  .arch-star {
+    font-size: 2rem;
+  }
+  .arch-divider {
+    height: 24px;
   }
 }
 @media (max-width: 900px) {
