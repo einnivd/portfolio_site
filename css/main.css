@@ -317,16 +317,17 @@ nav.scrolled {
   background: var(--rule);
   margin-bottom: 1rem;
 }
-.modal-desc {
-  font-size: 0.82rem;
-  color: var(--ink2);
-  line-height: 1.9;
-}
 .modal-tools {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.8rem;
+}
+.modal-chip-group{
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .modal-tool-chip {
   font-size: 1rem;
@@ -335,6 +336,12 @@ nav.scrolled {
   border-radius: 20px;
   color: var(--ink);
   background: rgba(255, 255, 255, 0.5);
+}
+/* modal-tools의 직계 자식으로 오는 chip(카드뉴스 모달처럼 modal-chip-group 없이
+   바로 쓰이는 경우)은 flex-direction:column의 기본 stretch 때문에
+   부모 너비만큼 늘어나므로, 텍스트 너비만큼만 차지하도록 고정 */
+.modal-tools > .modal-tool-chip {
+  align-self: flex-start;
 }
 .modal-close {
   position: absolute;
